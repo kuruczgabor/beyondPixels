@@ -1,3 +1,108 @@
 .session-form-container {
     background-color: magenta;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    flex-direction: column;
+    height: 550px;
+    width: 400px;
+    box-sizing: border-box;
 }
+
+
+
+.session-form {
+    background-color: green;
+    box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 80%;
+}
+
+.session-form > label {
+    background-color: greenyellow;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: grey;
+    font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
+    width: 100%
+}
+
+.session-form > label > input {
+    height: 40px;
+    width: 98%;
+    margin-top: 5px;
+    font-size: 20px;
+    color: black;
+    font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
+}
+
+.session-form-top {
+    margin-top: 30px;
+    font-size: 24px;
+    font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
+}
+
+.session-form-bottom {
+    display: flex;
+    font-size: 18px;
+    color: grey;
+    font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
+}
+
+.session-form-bottom-link a {
+    text-decoration: none;
+}
+
+.session-form-bottom-link {
+    margin-left: 5px;
+    color: lightblue;
+}
+
+.session-form-bottom-link:hover {
+    
+}
+
+// .session-form > div {
+//     background-color: blue;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+//     padding: 5px;
+//     font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
+//     font-size: 14px;
+//     color: grey;
+//     box-sizing: border-box;
+//     width: 400px;
+// }
+
+// .session-form > div {
+
+// }
+
+// .session-form input {
+//     height: 50px;
+//     width: 300px;
+//     border: 0.1px grey;
+//     border-radius: 2px;
+//     margin: 5px 0px;
+// }
+
+// .session-form > div > input {
+//     border-radius: 40px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     position: center;
+//     font-size: 16px;
+//     width: 100px;
+//     height: 40px;
+// }
