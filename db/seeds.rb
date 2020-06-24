@@ -10,6 +10,5 @@ User.delete_all
 
 user1 = User.create!(
     username: 'username',
-    password: 'password',
-    email: 'username@gmail.com'
+    password: 'password'
 )

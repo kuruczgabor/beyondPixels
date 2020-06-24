@@ -2,6 +2,7 @@
   "name": "beyondPixels",
   "private": true,
   "dependencies": {
+    "jquery": "^3.1.1",
     "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.10.1",
