@@ -1,0 +1,33 @@
+.header {
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px
+}
+
+.header h1 {
+    background-color: red;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 25px;
+    color: black;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+.auth-header ul {
+    background-color: blue;
+    display: flex;
+    font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
+    font-size: 16px;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+
+.auth-header ul {
+    background-color: rebeccapurple;
+    left: 10px;
+}

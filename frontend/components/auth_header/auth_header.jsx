@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Greeting = ({ currentUser, logout }) => {
+const AuthHeader = ({ currentUser, logout }) => {
     const sessionLinks = () => (
-        <nav>
-            <Link to="/login">Log in</Link>
-            <br/>
-            <Link to="/signup">Sign up</Link>
+        <nav className="auth-header">
+            <ul>   
+                <li><Link to="/">Demo</Link></li>
+                <li><Link to="/login">Log in</Link></li>
+                <li><Link to="/signup">Sign up</Link></li>
+            </ul>
         </nav>
     );
     const personalGreeting = () => (
@@ -19,4 +21,4 @@ const Greeting = ({ currentUser, logout }) => {
     return currentUser ? personalGreeting() : sessionLinks();
 };
 
-export default Greeting;
+export default AuthHeader;
