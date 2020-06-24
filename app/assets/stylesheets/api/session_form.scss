@@ -1,5 +1,4 @@
 .session-form-container {
-    background-color: magenta;
     display: flex;
     justify-content: space-around;
     position: fixed;
@@ -8,15 +7,15 @@
     transform: translate(-50%, -50%);
     align-items: center;
     flex-direction: column;
-    height: 550px;
+    height: 500px;
     width: 400px;
     box-sizing: border-box;
+    border: 1px solid lightgrey;
 }
 
 
 
 .session-form {
-    background-color: green;
     box-sizing: border-box;
     justify-content: space-around;
     align-items: center;
@@ -27,7 +26,6 @@
 }
 
 .session-form > label {
-    background-color: greenyellow;
     box-sizing: border-box;
     font-size: 16px;
     color: grey;
@@ -42,6 +40,7 @@
     font-size: 20px;
     color: black;
     font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
+    border: 1px solid lightgrey;
 }
 
 .session-form-top {
@@ -67,7 +66,22 @@
 }
 
 .session-form-bottom-link:hover {
-    
+    text-decoration: underline;
+}
+
+.session-form > input {
+    border-radius: 40px;
+    font-size: 16px;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(64, 111, 205);
+    color: white;
+    font-weight: bolder;
+    border: none
+}
+
+.session-form > input:hover {
+    background-color: rgb(83, 133, 243);
 }
 
 // .session-form > div {
