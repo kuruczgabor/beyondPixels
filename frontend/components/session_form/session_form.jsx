@@ -26,9 +26,7 @@ class SessionForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
+                    <li key={`error-${i}`}>{error}</li>
                 ))}
             </ul>
         );
@@ -63,43 +61,59 @@ class SessionForm extends React.Component {
     }
 
     render() {
+
+        // const renderErrors = this.renderErrors();
+        // debugger
+
         return (
 
-            <div className="session-form-container">
+            <div className="session-env">
 
-                <div onClick={this.props.closeModal} className='modal' >
+                {/* {this.renderErrors().props.children.length > 0 &&  
+                <div onClick={this.props.closeModal} className='session-modal'>
                     {this.renderErrors()}
-                </div>
-                
-                {this.sessionFormTopChooser()}
+                </div>} */}
 
-                <form onSubmit={this.handleSubmit} className="session-form">
+                {/* {this.renderErrors() && <div onClick={this.props.closeModal} className='session-modal' >
+                    {this.renderErrors()}
+                </div>}
+{/*  */}
+                {this.renderErrors()} */}
+
+                <div className="session-form-container">
+
+                    {this.sessionFormTopChooser()}
+
+                    <form onSubmit={this.handleSubmit} className="session-form">
 
 
 
-                    <label>Username
+                        <label>Username
                         <input type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
-                        />
-                    </label>
+                                value={this.state.username}
+                                onChange={this.update('username')}
+                            />
+                        </label>
 
-                    <label>Password
+                        <label>Password
                         <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                        />
-                    </label>
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                            />
+                        </label>
 
 
-                    <input type="submit" value={this.props.formType} />
+                        <input type="submit" value={this.props.formType} />
 
-                </form>
-                
-                {this.sessionFormBottomChooser()}
-                
+                    </form>
+
+                    {this.sessionFormBottomChooser()}
+
+
+                </div>
 
             </div>
+
         );
     }
 

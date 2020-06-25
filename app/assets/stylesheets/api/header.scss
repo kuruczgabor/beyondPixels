@@ -47,3 +47,32 @@
     border: 2px solid rgb(39, 39, 39);;
     border-radius: 20px;
 }
+
+.signed-in-header ul {
+    display: flex;
+    font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.signed-in-header ul li {
+    padding: 10px 10px;
+    margin: 0px 10px;
+    font-size: 16px;
+    color:rgb(39, 39, 39);
+    font-weight: bold;
+}
+
+.signed-in-header ul li:hover {
+    color:rgb(83, 133, 243);
+}
+
+#header-upload-button {
+    border: 2px solid rgb(39, 39, 39);;
+    border-radius: 20px;
+}
+
+.fa-user {
+    font-size: 20px;
+}

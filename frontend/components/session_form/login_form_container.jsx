@@ -6,6 +6,7 @@ import SessionForm from './session_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ({ errors }) => {
+    // debugger
     return {
         errors: errors.session,
         formType: 'Log in',
@@ -21,7 +22,8 @@ const mapDispatchToProps = dispatch => {
                 Signup
             </button>
         ),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        openModal: () => dispatch(openModal(''))
     };
 };
 

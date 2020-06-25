@@ -1,16 +1,14 @@
-.modal {
-  position: absolute;
-  top: 15px;
-  // bottom: 0;
-  // right: 0;
-  // left: 0;
-  // background: rgba(0, 0, 0, 0.7);
-  z-index: 10;
-}
-
-.modal-child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.session-modal {
+    position: absolute;
+    background-color: red;
+    color: white;
+    left: 50%;
+    top: 100px;
+    transform: translate(-50%, -50%);
+    height: 40px;
+    font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
+    border-radius: 5px;
+    box-sizing: border-box;
+    position: center;
+    padding: 10px
 }
