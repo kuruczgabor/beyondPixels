@@ -64,13 +64,16 @@ class SessionForm extends React.Component {
 
     render() {
         return (
+
             <div className="session-form-container">
 
                 {this.sessionFormTopChooser()}
 
                 <form onSubmit={this.handleSubmit} className="session-form">
 
-                    {this.renderErrors()}
+                    <div onClick={this.props.closeModal} className="modal-errors">
+                        {this.renderErrors()}
+                    </div>
 
                     <label>Username
                         <input type="text"
@@ -85,7 +88,6 @@ class SessionForm extends React.Component {
                             onChange={this.update('password')}
                         />
                     </label>
-                            
 
 
                     <input type="submit" value={this.props.formType} />
