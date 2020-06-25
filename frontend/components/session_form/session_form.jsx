@@ -67,13 +67,15 @@ class SessionForm extends React.Component {
 
             <div className="session-form-container">
 
+                <div onClick={this.props.closeModal} className='modal' >
+                    {this.renderErrors()}
+                </div>
+                
                 {this.sessionFormTopChooser()}
 
                 <form onSubmit={this.handleSubmit} className="session-form">
 
-                    <div onClick={this.props.closeModal} className="modal-errors">
-                        {this.renderErrors()}
-                    </div>
+
 
                     <label>Username
                         <input type="text"
