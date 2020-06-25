@@ -12,13 +12,18 @@ const AuthHeader = ({ currentUser, logout }) => {
         </nav>
     );
     const personalGreeting = () => (
-        <div>
-            <h2>Hello, {currentUser.username}!</h2>
-            <button onClick={logout}>Log Out</button>
-        </div>
+        <nav className="signed-in-header">
+            <ul>
+                <li>Hello, {currentUser.username}!</li>
+                <button onClick={logout}><li>Log Out</li></button>
+            </ul>
+        </nav>
     );
 
     return currentUser ? personalGreeting() : sessionLinks();
 };
 
 export default AuthHeader;
+
+
+

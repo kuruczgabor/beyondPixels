@@ -49,15 +49,15 @@ class SessionForm extends React.Component {
     sessionFormBottomChooser() {
         if (this.props.formType === "Sign up") {
             return (
-                <p className="session-form-bottom">Already have an account?  
-                    <div className="session-form-bottom-link">{this.props.navLink}</div>
-                </p>
+                <div className="session-form-bottom">Already have an account?  
+                    <p className="session-form-bottom-link">{this.props.navLink}</p>
+                </div>
             ) 
         } else {
             return (
-                <p className="session-form-bottom">Don't have an account?  
-                    <div className="session-form-bottom-link">{this.props.navLink}</div>
-                </p>
+                <div className="session-form-bottom">Don't have an account?  
+                    <p className="session-form-bottom-link">{this.props.navLink}</p>
+                </div>
             )
         }
     }
