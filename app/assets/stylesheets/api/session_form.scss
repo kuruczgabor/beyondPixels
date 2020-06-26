@@ -46,6 +46,7 @@ html {
     color: black;
     font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
     border: 1px solid lightgrey;
+    padding-left: 10px;
 }
 
 .session-form-top {
@@ -58,9 +59,10 @@ html {
 
 .session-form-bottom {
     display: flex;
-    font-size: 18px;
+    font-size: 16px;
     color: grey;
     font-family: 'Roboto', sans-serif;
+    padding-bottom: 10px;
 }
 
 .session-form-bottom-link a {

@@ -62,8 +62,8 @@ class SessionForm extends React.Component {
 
     render() {
 
-        // const renderErrors = this.renderErrors();
-        // debugger
+        const renderErrors = this.renderErrors();
+        debugger
 
         return (
 
@@ -76,9 +76,12 @@ class SessionForm extends React.Component {
 
                 {/* {this.renderErrors() && <div onClick={this.props.closeModal} className='session-modal' >
                     {this.renderErrors()}
-                </div>}
-{/*  */}
-                {this.renderErrors()} */}
+                </div>} */}
+
+                <div className='error-popup'>
+                    {this.renderErrors()}
+                </div>
+                
 
                 <div className="session-form-container">
 

@@ -1,4 +1,4 @@
-.session-modal {
+.error-popup {
     position: absolute;
     background-color: red;
     color: white;
@@ -10,5 +10,6 @@
     border-radius: 5px;
     box-sizing: border-box;
     position: center;
-    padding: 10px
+    padding: 10px;
+    animation: fadeIn 1s;
 }
