@@ -7,11 +7,13 @@
     transform: translate(-50%, -50%);
     height: 40px;
     font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
+    font-weight: 1px;
     border-radius: 5px;
     box-sizing: border-box;
     position: center;
     padding: 10px;
     animation: fadeIn ease 1s ;
+    box-shadow: 1px 1px 10px 1px rgba(180, 180, 180, 0.267);
 }
 
 @keyframes fadeIn {
