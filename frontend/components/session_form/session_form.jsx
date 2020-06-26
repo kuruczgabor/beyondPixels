@@ -69,8 +69,15 @@ class SessionForm extends React.Component {
             )
         }
     }
+
+    componentDidMount() {
+        this.props.resetErrors();
+    }
     
     render() {
+
+        // const renderErrors = this.renderErrors();
+        // debugger
 
 
         return (
