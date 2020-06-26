@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
     }
 
     errorPopUp() {
-        if (this.renderErrors().props.children.length > 0) {
+        if (this.props.errors.length > 0) {
             return (
                 <div className='error-popup'>
                     {this.renderErrors()}
