@@ -2,6 +2,8 @@
 #profile-dropdown-trigger {
   display: inline-block;
   position: relative;
+  cursor: pointer;
+  padding: 5px;
 }
 
 #profile-dropdown button {
@@ -13,14 +15,26 @@
 #profile-dropdown {
   display: none;
   position: absolute;
+  right: -100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   &.reveal {
-    border: 1px solid black;
-    display: block;
+    display: inline-block;
     box-sizing: content-box;
     width: 150px;
     background-color: white;
     margin-top: 30px;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px 1px rgba(180, 180, 180, 0.267);
+    font-weight: lighter;
   }
 }
 
+#profile-dropdown li {
+  background-color: green;
+  width: 100%;
+}
+
+#profile-dropdown li:hover {
+  background-color: blue;
+}

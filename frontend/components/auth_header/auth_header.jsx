@@ -38,16 +38,16 @@ const AuthHeader = ({ currentUser, logout }) => {
     // }
 
     const revealDropdown = () => {
-    $(document.body)
-    $('#profile-dropdown').addClass('reveal');
-    $('#profile-dropdown-trigger').off('click', revealDropdown);
-    $(document).on('click', hideDropdown);
+        $(document.body)
+        $('#profile-dropdown').addClass('reveal');
+        $('#profile-dropdown-trigger').off('click', revealDropdown);
+        $(document).on('click', hideDropdown);
     };
 
     const hideDropdown = () => {
-    $('#profile-dropdown').removeClass('reveal');
-    $('#profile-dropdown-trigger').on('click', revealDropdown);
-    $(document).off('click', hideDropdown);
+        $('#profile-dropdown').removeClass('reveal');
+        $('#profile-dropdown-trigger').on('click', revealDropdown);
+        $(document).off('click', hideDropdown);
     };
 
     return currentUser ? signedInHeader() : sessionLinks();
@@ -55,18 +55,3 @@ const AuthHeader = ({ currentUser, logout }) => {
 };
 
 export default AuthHeader;
-
-
-
-// // const revealDropdown = () => {
-// //     $(document.body)
-// //     $('#profile-dropdown').addClass('hidden');
-// //     // $('#profile-dropdown-trigger').off('click', revealDropdown);
-// //     $(document).on('click', hideDropdown);
-// // };
-
-// // const hideDropdown = () => {
-// //     $('#profile-dropdown').removeClass('hidden');
-// //     // $('#profile-dropdown-trigger').on('click', revealDropdown);
-// //     $(document).off('click', hideDropdown);
-// // };
