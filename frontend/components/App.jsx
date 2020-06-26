@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link, Redirect } from 'react-router-dom';
 
 import GreetingContainer from './auth_header/auth_header_container';
 import SignUpFormContainer from './session_form/signup_form_container';
@@ -11,13 +11,14 @@ const App = () => (
     <div>
         <Modal />
         <header className="header" >
-            
             <Link to="/"><h1>beyondPixels</h1></Link>
             <GreetingContainer />
         </header>
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+
+            <Redirect to='/'/>
         </Switch>
     </div>
 );

@@ -46,6 +46,7 @@ html {
     color: black;
     font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
     border: 1px solid lightgrey;
+    border-radius: 4px;
     padding-left: 10px;
 }
 
@@ -93,5 +94,6 @@ html {
 
 .session-form > input:hover {
     background-color: rgb(83, 133, 243);
+    cursor: pointer;
 }
 

@@ -69,28 +69,13 @@ class SessionForm extends React.Component {
             )
         }
     }
-
+    
     render() {
 
-        // const renderErrors = this.renderErrors();
-        // debugger
 
         return (
 
             <div className="session-env">
-
-                {/* {this.renderErrors().props.children.length > 0 &&  
-                <div onClick={this.props.closeModal} className='session-modal'>
-                    {this.renderErrors()}
-                </div>} */}
-
-                {/* {this.renderErrors() && <div onClick={this.props.closeModal} className='session-modal' >
-                    {this.renderErrors()}
-                </div>} */}
-
-                {/* <div className='error-popup'>
-                    {this.renderErrors()}
-                </div> */}
 
                 <div>
                     {this.errorPopUp()}
@@ -119,7 +104,7 @@ class SessionForm extends React.Component {
                         </label>
 
 
-                        <input type="submit" value={this.props.formType} onClick={this.errorPopUp()} />
+                        <input type="submit" value={this.props.formType} onClick={() => setTimeout(this.errorPopUp(), 3000)} />
 
                     </form>
 
@@ -136,7 +121,5 @@ class SessionForm extends React.Component {
 
 export default SessionForm;
 
-{/* <input type="submit" value={this.props.formType} /> */}
-{/* <button value={this.props.formType}>Sign up</button> */ }
-// { this.props.navLink }
+
 
