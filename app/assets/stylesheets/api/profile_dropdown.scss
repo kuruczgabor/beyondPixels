@@ -1,14 +1,14 @@
   
-#profile-pointer {
+#profilepointer {
   display: inline-block;
   position: relative;
   cursor: pointer;
 }
 
-#profile-dropdown {
+#profiledropdown {
   position: absolute;
   display: none;
-  &.reveal {
+  &.trigger {
     display: block;
     border: 1px solid lightgrey;
     border-radius: 10px;
@@ -23,4 +23,26 @@
     padding-bottom: 7px;
 
   }
+}
+
+.profileLink {
+  text-decoration: none;
+  color:  black;
+}
+
+#profiledropdown > li {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 10px 20px;
+  
+}
+#profiledropdown li:hover {
+  background: #216feb;
+}
+
+.fas, .far {
+  color: gray;
+  width: 30px;
+  height: 30px;
+  padding-right: 25px;
 }
