@@ -1,7 +1,7 @@
 .error-popup {
     position: absolute;
-    background-color: red;
     color: white;
+    background-color: rgb(243, 98, 98);
     left: 50%;
     top: 100px;
     transform: translate(-50%, -50%);
@@ -11,5 +11,10 @@
     box-sizing: border-box;
     position: center;
     padding: 10px;
-    animation: fadeIn 1s;
+    animation: fadeIn ease 1s ;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
 }

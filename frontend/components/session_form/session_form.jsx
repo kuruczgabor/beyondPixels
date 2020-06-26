@@ -60,10 +60,20 @@ class SessionForm extends React.Component {
         }
     }
 
+    errorPopUp() {
+        if (this.renderErrors().props.children.length > 0) {
+            return (
+                <div className='error-popup'>
+                    {this.renderErrors()}
+                </div>
+            )
+        }
+    }
+
     render() {
 
-        const renderErrors = this.renderErrors();
-        debugger
+        // const renderErrors = this.renderErrors();
+        // debugger
 
         return (
 
@@ -78,10 +88,13 @@ class SessionForm extends React.Component {
                     {this.renderErrors()}
                 </div>} */}
 
-                <div className='error-popup'>
+                {/* <div className='error-popup'>
                     {this.renderErrors()}
+                </div> */}
+
+                <div>
+                    {this.errorPopUp()}
                 </div>
-                
 
                 <div className="session-form-container">
 
@@ -106,12 +119,11 @@ class SessionForm extends React.Component {
                         </label>
 
 
-                        <input type="submit" value={this.props.formType} />
+                        <input type="submit" value={this.props.formType} onClick={this.errorPopUp()} />
 
                     </form>
 
                     {this.sessionFormBottomChooser()}
-
 
                 </div>
 
