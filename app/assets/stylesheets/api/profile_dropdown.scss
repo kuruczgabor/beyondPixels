@@ -10,12 +10,21 @@
   border: none;
   background: none;
   padding: 0;
+  text-align: left;
+  margin-top:20px;
+  vertical-align: middle;
 }
 
+#profile-dropdown button > li {
+  padding-bottom: 14px;
+  padding-top: 9px;
+}
+ 
 #profile-dropdown {
   display: none;
   position: absolute;
   right: -100px;
+  padding-left: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
   &.reveal {
@@ -31,10 +40,17 @@
 }
 
 #profile-dropdown li {
-  background-color: green;
-  width: 100%;
+  width: 130px;
+  height: 14px;
+  align-items: left;
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;;
+  font-size: 14px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 
 #profile-dropdown li:hover {
-  background-color: blue;
+  background-color:rgb(64, 110, 209);
+  color: white;
 }
