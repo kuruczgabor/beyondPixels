@@ -26,7 +26,7 @@ const AuthHeader = ({ currentUser, logout }) => {
                     <li>FakeLink1</li>
                     <li>FakeLink2</li>
                     <li>FakeLink3</li>
-                    <button onClick={logout}><li>Log Out</li></button>
+                    <button onClick={logout} className="header-logout-button" ><li>Log Out</li></button>
                 </ul>
             </div>
 

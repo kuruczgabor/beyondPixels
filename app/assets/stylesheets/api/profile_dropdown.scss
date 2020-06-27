@@ -2,8 +2,11 @@
 #profile-dropdown-trigger {
   display: inline-block;
   position: relative;
-  cursor: pointer;
   padding: 5px;
+}
+
+.fa-user {
+  cursor: pointer;
 }
 
 #profile-dropdown button {
@@ -53,4 +56,8 @@
 #profile-dropdown li:hover {
   background-color:rgb(64, 110, 209);
   color: white;
+}
+
+.header-logout-button:hover {
+  cursor: pointer;
 }
