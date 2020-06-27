@@ -77,6 +77,22 @@ class SessionForm extends React.Component {
         }
     }
 
+    errorUnderUserNameInput() {
+        if (this.props.formType ===  "Sign up") {
+            return (this.props.errors.map((error, i) => (
+                error.includes('Username') ? error : ''
+            )))
+        }
+    }
+
+    errorUnderPasswordInput() {
+        if (this.props.formType === "Sign up") {
+            return (this.props.errors.map((error, i) => (
+                error.includes('Password') ? error : ''
+            )))
+        }
+    }
+
     componentDidMount() {
         this.props.resetErrors();
     }
@@ -86,7 +102,8 @@ class SessionForm extends React.Component {
     render() {
 
         // const renderErrors = this.renderErrors();
-        debugger
+        // const errors = this.errors;
+        // debugger
 
 
         return (
@@ -111,6 +128,10 @@ class SessionForm extends React.Component {
                                 onChange={this.update('username')}
                             />
                         </label>
+                        
+                        <div id="username-session-error">
+                            {this.errorUnderUserNameInput()}
+                        </div>
 
                         <label>Password
                         <input type="password"
@@ -119,6 +140,9 @@ class SessionForm extends React.Component {
                             />
                         </label>
 
+                        <div id="password-session-error">
+                            {this.errorUnderPasswordInput()}
+                        </div>
 
                         <input type="submit" value={this.props.formType} onClick={() => setTimeout(this.errorPopUp(), 3000)} />
 

@@ -21,12 +21,13 @@ html {
 
 
 .session-form {
+    position: relative;
     box-sizing: border-box;
     justify-content: space-around;
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 60%;
+    height: 70%;
     width: 80%;
 }
 
@@ -40,7 +41,7 @@ html {
 
 .session-form > label > input {
     height: 40px;
-    width: 98%;
+    width: 305px;
     margin-top: 5px;
     font-size: 20px;
     color: black;
