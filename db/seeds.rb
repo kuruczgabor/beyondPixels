@@ -9,6 +9,6 @@
 User.delete_all
 
 user1 = User.create!(
-    username: 'username',
+    username: 'demouser',
     password: 'password'
 )

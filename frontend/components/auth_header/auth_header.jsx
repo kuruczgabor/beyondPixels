@@ -7,7 +7,7 @@ const AuthHeader = ({ currentUser, logout }) => {
     const sessionLinks = () => (
         <nav className="auth-header">
             <ul>   
-                <Link to="/"><li>Demo</li></Link>
+                {/* <Link to="/"><li>Demo</li></Link> */}
                 <Link to="/login"><li>Log in</li></Link>
                 <Link to="/signup" id="header-signup-button"><li>Sign up</li></Link>
             </ul>

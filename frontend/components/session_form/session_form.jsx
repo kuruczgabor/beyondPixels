@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
     demoLogin(e) {
         e.preventDefault();
         const user = { username: "demouser", password: "password" }
-        this.props.processForm(user);
+        this.props.demo(user);
     }
 
     renderErrors() {
@@ -74,6 +74,8 @@ class SessionForm extends React.Component {
                     {this.renderErrors()}
                 </div>
             )
+        } else {
+            return null
         }
     }
 
@@ -144,7 +146,9 @@ class SessionForm extends React.Component {
                             {this.errorUnderPasswordInput()}
                         </div>
 
-                        <input type="submit" value={this.props.formType} onClick={() => setTimeout(this.errorPopUp(), 3000)} />
+                        {/* <input type="submit" value={this.props.formType} onClick={() => setTimeout(this.errorPopUp(), 3000)} /> */}
+                        <input type="submit" value={this.props.formType} onClick={this.errorPopUp} />
+
 
                         <input type="submit" value="Demo Login" onClick={this.demoLogin} />
 
