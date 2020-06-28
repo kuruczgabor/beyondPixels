@@ -42,7 +42,7 @@
 }
 
 #splash-background-author {
-    background-color: yellow;
+    // background-color: yellow;
     font-family: 'Roboto', sans-serif;
     text-align: right;
     margin-right: 30px;
@@ -58,13 +58,13 @@
 }
 
 .splash-content {
-    background-color: red;
+    // background-color: red;
     font-family: 'Roboto', sans-serif;
     padding: 20px 40px;
 }
 
 .splash-content-title {
-    background-color: rebeccapurple;
+    // background-color: rebeccapurple;
     font-size: 30px;
     text-align: center;
     font-weight: bolder;
@@ -72,7 +72,7 @@
 }
 
 .splash-content-list {
-    background-color: salmon;
+    // background-color: salmon;
     display: flex;
     justify-content: space-between;
 
@@ -80,7 +80,7 @@
 
 .splash-content-list li {
     width: 30%;
-    background-color: skyblue;
+    // background-color: skyblue;
     font-size: 20px;
     font-weight: bolder;
     padding: 10px;
@@ -88,7 +88,7 @@
 }
 
 .splash-content-list p {
-    background-color: seagreen;
+    // background-color: seagreen;
     margin-top: 10px;
     font-size: 16px;
     font-weight: lighter;
@@ -96,7 +96,7 @@
 }
 
 .splash-icon {
-    color: blue;
+    // color: blue;
     width: 80px;
     height: 80px;
     z-index: 20;
@@ -118,10 +118,13 @@
 
 .splash-footer {
 
-    background-color: green;
+    // background-color: green;
     font-family: 'Roboto', sans-serif;
-    height: 75px;
-    box-shadow: 0px 0px 5px 0px black;
+    height: 60px;
+    // box-shadow: 0px 0px 5px 0px black;
+    // border-top: rgba(0, 0, 0, 0.863) solid 0.5;
+    border-top: 1px solid rgba(121, 121, 121, 0.562);
+    // box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .splash-footer ul {
@@ -130,13 +133,18 @@
 }
 
 .splash-footer ul li {
-    background-color: honeydew;
+    // background-color: honeydew;
     margin: 25px;
     right: 20px;
+    margin-left: 50px;
 }
 
 .splash-footer li a {
     text-decoration: none;
     color: rgba(77, 77, 77, 0.829);
-    font-size: 20px;
+    font-size: 16px;
+}
+
+.splash-footer a:hover {
+    color: rgba(3, 3, 3, 0.884);
 }
