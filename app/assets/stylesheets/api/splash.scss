@@ -18,7 +18,7 @@
     right: 60%;
     top: 40px;
     font-family: 'Roboto', sans-serif;
-    // font-size: 50px;
+    // font-size: 50px;;
     font-size: 4vw;
     font-weight: bolder;
     color:rgb(39, 39, 39);
@@ -43,6 +43,14 @@
 
 #splash-background-author {
     background-color: yellow;
+    font-family: 'Roboto', sans-serif;
+    text-align: right;
+    margin-right: 30px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 10px;
+    color: rgba(128, 128, 128, 0.623);
 }
 
 #splash-signup-button:hover {
@@ -106,4 +114,27 @@
 
 #splash-icon-3 {
     background-image: image-url('people.png');
+}
+
+.splash-footer {
+    background-color: green;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+}
+
+.splash-footer ul {
+    display: flex;
+    align-items: right;
+}
+
+.splash-footer ul li {
+    background-color: honeydew;
+    margin: 25px;
+    right: 20px;
+}
+
+.splash-footer li a {
+    text-decoration: none;
+    color: rgba(77, 77, 77, 0.829);
+    font-size: 20px;
 }

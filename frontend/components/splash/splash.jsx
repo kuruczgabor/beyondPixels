@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 class Splash extends Component {
 
@@ -15,7 +15,7 @@ class Splash extends Component {
                     </div>
                     <p id="splash-background-author">Photo by Gabor Kurucz</p>
                 </div>
-
+                
                 <div className="splash-content">
                     <p className="splash-content-title">What makes us different</p>
                     <ul className="splash-content-list">
@@ -40,6 +40,13 @@ class Splash extends Component {
 
                     </ul>
                 </div>
+
+                <footer className="splash-footer">
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/kurucz-gabor/">LinkedIn</a></li>
+                        <li><a href="https://github.com/kuruczgabor">GitHub</a></li>
+                    </ul>
+                </footer>
 
             </div>
         )
