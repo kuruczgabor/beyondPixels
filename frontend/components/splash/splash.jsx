@@ -9,8 +9,10 @@ class Splash extends Component {
             <div>
                 <div className="splash-main">
                     <div className="splash-welcome-message"> 
-                        Share your world through your own lenses
+                        Share your world 
                         <br/>
+                        through your own lenses
+                        <p>Get inspired by incredible photos from diverse styles and genres around the world. We’re not guided by trends — simply great photography.</p>
                         <Link to="/signup" id="splash-signup-button">Sign up</Link>
                     </div>
                     <p id="splash-background-author">Photo by Gabor Kurucz</p>

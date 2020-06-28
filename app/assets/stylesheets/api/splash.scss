@@ -16,14 +16,22 @@
 .splash-welcome-message {
     position: absolute;
     left: 8%;
-    right: 60%;
+    right: 50%;
     top: 40px;
     font-family: 'Roboto', sans-serif;
     // font-size: 50px;;
-    font-size: 4vw;
+    font-size: 3vw;
     font-weight: bolder;
     color:rgb(39, 39, 39);
     line-height: 110%;
+}
+
+.splash-welcome-message p {
+    box-sizing: border-box;
+    font-size: 1.4vw;
+    line-height: 1.6vw;
+    margin-top: 15px;
+    font-weight: lighter;
 }
 
 #splash-signup-button {
