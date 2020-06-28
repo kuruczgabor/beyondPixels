@@ -23,7 +23,7 @@ const AuthHeader = ({ currentUser, logout }) => {
                     <i className="fas fa-user"></i>
                 </div>
                 <ul id="profile-dropdown">
-                    <li>FakeLink1</li>
+                    <Link to={`/users/${currentUser.id}`}><li>Profile</li></Link>
                     <li>FakeLink2</li>
                     <li>FakeLink3</li>
                     <button onClick={logout} className="header-logout-button" ><li>Log Out</li></button>

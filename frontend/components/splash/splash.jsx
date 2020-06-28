@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class Splash extends Component {
 
@@ -7,9 +8,12 @@ class Splash extends Component {
 
             <div>
                 <div className="splash-main">
-                    <div className="splash-wave">
-
+                    <div className="splash-welcome-message"> 
+                        Share your world through your own lenses
+                        <br/>
+                        <Link to="/signup" id="splash-signup-button">Sign up</Link>
                     </div>
+                    
                 </div>
 
             </div>
