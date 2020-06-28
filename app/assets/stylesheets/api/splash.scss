@@ -1,9 +1,9 @@
 .splash-main {
     background-image: image-url('splash_1.png');
-    background-color: rgb(250, 250, 250);
+    background-color: white;
     height: 600px;
-    background-position: center top;
-    background-size: contain;
+    background-position: center;
+    background-size: cover;
     // background-attachment: fixed;
     z-index: 1;
     position: relative;
@@ -41,6 +41,69 @@
     line-height: 100%;
 }
 
+#splash-background-author {
+    background-color: yellow;
+}
+
 #splash-signup-button:hover {
     background-color: rgba(39, 39, 39, 0.829);
+}
+
+.splash-content {
+    background-color: red;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px 40px;
+}
+
+.splash-content-title {
+    background-color: rebeccapurple;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+.splash-content-list {
+    background-color: salmon;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.splash-content-list li {
+    width: 30%;
+    background-color: skyblue;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 10px;
+    margin: 10px;
+}
+
+.splash-content-list p {
+    background-color: seagreen;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: lighter;
+    line-height: 20px;
+}
+
+.splash-icon {
+    color: blue;
+    width: 80px;
+    height: 80px;
+    z-index: 20;
+    background-position: center;
+    background-size: cover;
+}
+
+#splash-icon-1 {
+    background-image: image-url('plant.png');
+}
+
+#splash-icon-2 {
+    background-image: image-url('build.png');
+}
+
+#splash-icon-3 {
+    background-image: image-url('people.png');
 }
