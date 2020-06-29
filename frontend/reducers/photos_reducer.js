@@ -4,7 +4,8 @@ import {
 } from '../actions/photo_actions';
 
 const photosReducer = (oldState = {}, action) => {
-    Object.freeze(oldState)
+    Object.freeze(oldState);
+    debugger
     switch(action.type) {
         case RECEIVE_PHOTOS:
             return action.photos;

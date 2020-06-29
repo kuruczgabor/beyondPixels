@@ -1,7 +1,7 @@
 export const fetchPhotos = () => (
     $.ajax({
         method: 'GET',
-        url: `/api/photos`
+        url: '/api/photos'
     })
 );
 
@@ -10,12 +10,15 @@ export const fetchPhoto = photoId => (
         method: 'GET',
         url: `/api/photos/${photoId}`
     })
-)
+);
 
-export const createPhoto = formData => (
-    $.ajax({
+export const createPhoto = formData => {
+    debugger
+    return $.ajax({
         method: 'POST',
         url: '/api/photos',
-        data: formData
-    })
-)
+        data: formData,
+        contentType: false,
+        processData: false
+    });
+};

@@ -12,6 +12,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
+    debugger
     return {
         uploadPhoto: photo => dispatch(createPhoto(photo)),
     };
