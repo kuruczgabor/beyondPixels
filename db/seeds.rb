@@ -7,8 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
+Photo.delete_all
 
 user1 = User.create!(
     username: 'demouser',
     password: 'password'
+)
+
+photo1 = Photo.create!(
+    title: 'sky',
+    description: 'blue'
 )
