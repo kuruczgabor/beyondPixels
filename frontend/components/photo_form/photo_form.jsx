@@ -33,7 +33,7 @@ class PhotoForm extends React.Component {
         formData.append('photo[description]', this.state.description);
         formData.append('photo[author_id]', this.state.authorId);
         formData.append('photo[photo_file]', this.state.photoFile);
-        debugger
+        // debugger
 
         this.props.uploadPhoto(formData);
     };
@@ -46,7 +46,7 @@ class PhotoForm extends React.Component {
     render() {
         const { title, description } = this.state;
         const preview = this.state.photoUrl? <img height="200px" width="300px" src={this.state.photoUrl}/> : null;
-        debugger
+        // debugger
         return (
             <div className="photo-form-main">
                 <div className="photo-form">

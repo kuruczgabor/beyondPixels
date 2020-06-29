@@ -5,14 +5,14 @@ import { createPhoto } from '../../actions/photo_actions';
 import PhotoForm from './photo_form';
 
 const mapStateToProps = state => {
-    debugger
+    // debugger
     return {
         currentUserId: state.session.id
     };
 };
 
 const mapDispatchToProps = dispatch => {
-    debugger
+    // debugger
     return {
         uploadPhoto: photo => dispatch(createPhoto(photo)),
     };

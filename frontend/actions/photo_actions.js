@@ -11,7 +11,7 @@ export const receivePhotos = photos => ({
 });
 
 export const receivePhoto = photo => {
-    debugger
+    // debugger
     return {
         type: RECEIVE_PHOTO,
         photo
@@ -33,7 +33,7 @@ export const fetchPhoto = photoId => dispatch => (
 );
 
 export const createPhoto = photo => dispatch => {
-    debugger
+    // debugger
     return APIUtil.createPhoto(photo).then(
             photo => dispatch(receivePhoto(photo))
         )

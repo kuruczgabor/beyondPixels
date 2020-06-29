@@ -13,7 +13,7 @@ export const fetchPhoto = photoId => (
 );
 
 export const createPhoto = formData => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'POST',
         url: '/api/photos',
