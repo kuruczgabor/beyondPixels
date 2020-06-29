@@ -30,7 +30,7 @@ const AuthHeader = ({ currentUser, logout }) => {
                 </ul>
             </div>
 
-            <Link to="/" id="header-upload-button"><li><i className="fas fa-arrow-up"></i>  Upload</li></Link>
+            <Link to="/photos/new" id="header-upload-button"><li><i className="fas fa-arrow-up"></i>  Upload</li></Link>
 
         </nav>
     )

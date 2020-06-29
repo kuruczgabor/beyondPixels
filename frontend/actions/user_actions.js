@@ -4,16 +4,16 @@ export const RECEIVE_USER = "RECEIVE_USER";
 
 
 
-export const receiveUser = data => ({
+export const receiveUser = user => ({
     type: RECEIVE_USER,
-    data
+    user
 });
 
 
 
 export const fetchUser = userId => dispatch => (
     ApiUtil.fetchUser(userId).then(
-        data => dispatch(receiveUser(data))
+        user => dispatch(receiveUser(user))
     )
 );
 
