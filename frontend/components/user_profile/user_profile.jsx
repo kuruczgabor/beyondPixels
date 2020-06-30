@@ -1,4 +1,5 @@
 import React from 'react';
+import PhotoIndexContainer from '../photo_index/photo_index_container'
 
 class UserProfile extends React.Component {
 
@@ -15,7 +16,7 @@ class UserProfile extends React.Component {
                 <div className="user-profile-info">
                     {user.username}
                 </div> 
-                
+                <PhotoIndexContainer/>
             </div>
         )
     }

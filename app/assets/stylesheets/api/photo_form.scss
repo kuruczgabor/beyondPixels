@@ -1,3 +1,99 @@
 .photo-form-main {
-    margin-top: 200px;
+    // background-color: green;
+    margin-top: 75px;
+    color:rgb(39, 39, 39);
+    font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
 }
+
+.photo-form-title {
+    // background-color: pink;
+    padding: 15px 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.photo-form-env {
+    // background-color: purple;
+    background-color:rgb(248, 248, 250);
+    padding: 50px;
+    min-height: 800px;
+}
+
+.photo-form-input {
+    // background-color: red;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+    // text-align: center;
+    margin-left: 30px;
+    border: 2px solid rgba(202, 202, 202, 0.479);
+    background-color: white;
+    // max-width: 350px;
+}
+
+.photo-form-input label {
+    font-size: 12px;
+    color: grey;
+}
+
+.photo-form-input input {
+    width: 290px;
+    height: 32px;
+    margin-top: 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(128, 128, 128, 0.507);
+    padding-left: 10px;
+}
+
+.photo-form-input p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.photo-form-preview-env {
+    position: relative;
+    display: flex;
+    // background-color: blue;
+    width: 60%;
+    // padding: 20px
+}
+
+.photo-form {
+    display: flex;
+    justify-content: space-between;
+    // background-color: white;
+}
+
+.photo-form-preview {
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    // margin: 10px
+}
+
+.photo-file-selector {
+    // margin: 40px;
+    margin-bottom: 20px;
+}
+
+#photo-form-button {
+    // padding-top: 50px;
+    background-color: rgb(60, 110, 200);
+    border: none;
+    color: white;
+    border-radius: 30px;
+    height: 40px;
+    text-decoration: none;
+    text-align: middle;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-left: 5px;
+    align-self: center;
+    cursor: pointer;
+    outline: none;
+}
+

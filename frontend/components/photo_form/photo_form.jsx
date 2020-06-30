@@ -45,30 +45,41 @@ class PhotoForm extends React.Component {
 
     render() {
         const { title, description } = this.state;
-        const preview = this.state.photoUrl? <img height="200px" width="300px" src={this.state.photoUrl}/> : null;
+        const preview = this.state.photoUrl ? <img width="100%" src={this.state.photoUrl}/> : null;
         // debugger
         return (
             <div className="photo-form-main">
-                <div className="photo-form">
-                    <h2>Upload Photo</h2>
+                <h2 className="photo-form-title">Upload</h2>
 
-                    <form onSubmit={this.handleSubmit}>
+                <div className="photo-form-env">
 
-                        <label>Title</label>
-                        <input type="text" value={title} onChange={this.update('title')}/>
+                    <input className="photo-file-selector" type="file" onChange={this.handleFile.bind(this)} />
 
+                    <form className="photo-form" onSubmit={this.handleSubmit}>
 
-                        <label>Description</label>
-                        <input type="text" value={description} onChange={this.update('description')}/>
-                        
-
-                        <div>
-                            {preview}
-                            <label>Image Preview</label>
-                            <input type="file" onChange={this.handleFile.bind(this)}/>
+                        <div className="photo-form-preview-env">
+                            <div className="photo-form-preview">{preview}</div>
                         </div>
 
-                        <input type="submit" value="Upload Photo"/>
+                        <div className="photo-form-input">
+
+                            <p>Details</p>
+
+                            <label>Title
+                                <br/>
+                                <input type="text" value={title} onChange={this.update('title')} />
+                            </label>
+
+                            <label>Description
+                                <br/>
+                                <input type="text" value={description} onChange={this.update('description')} />
+                            </label>
+
+                            <label>
+                                <input id="photo-form-button" type="submit" value="Upload" />
+                            </label>
+
+                        </div>
 
                     </form>
 
