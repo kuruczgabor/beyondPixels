@@ -53,7 +53,12 @@ class PhotoForm extends React.Component {
 
                 <div className="photo-form-env">
 
-                    <input className="photo-file-selector" type="file" onChange={this.handleFile.bind(this)} />
+                    {/* <input className="photo-file-selector" type="file" onChange={this.handleFile.bind(this)} /> */}
+                    <label className="choose-a-file" for="select-file">Choose a file</label>
+                    <br/>
+                    <input className="photo-file-selector" id="select-file" name="file" type="file" onChange={this.handleFile.bind(this)} />
+                    <br/>
+                    
 
                     <form className="photo-form" onSubmit={this.handleSubmit}>
 
@@ -65,7 +70,7 @@ class PhotoForm extends React.Component {
 
                             <p>Details</p>
 
-                            <label>Title
+                            <label>Title*
                                 <br/>
                                 <input type="text" value={title} onChange={this.update('title')} />
                             </label>
@@ -75,9 +80,9 @@ class PhotoForm extends React.Component {
                                 <input type="text" value={description} onChange={this.update('description')} />
                             </label>
 
-                            <label>
+                            {/* <label> */}
                                 <input id="photo-form-button" type="submit" value="Upload" />
-                            </label>
+                            {/* </label> */}
 
                         </div>
 

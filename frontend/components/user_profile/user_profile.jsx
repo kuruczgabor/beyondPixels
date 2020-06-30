@@ -16,7 +16,7 @@ class UserProfile extends React.Component {
                 <div className="user-profile-info">
                     {user.username}
                 </div> 
-                <PhotoIndexContainer/>
+                {/* <PhotoIndexContainer/> */}
             </div>
         )
     }

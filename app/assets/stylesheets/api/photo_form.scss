@@ -59,6 +59,7 @@
     // background-color: blue;
     width: 60%;
     // padding: 20px
+    // max-height: 300px;
 }
 
 .photo-form {
@@ -77,11 +78,14 @@
 
 .photo-file-selector {
     // margin: 40px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
+    display: hidden;
+    visibility: hidden;
 }
 
 #photo-form-button {
     // padding-top: 50px;
+
     background-color: rgb(60, 110, 200);
     border: none;
     color: white;
@@ -97,3 +101,13 @@
     outline: none;
 }
 
+.choose-a-file {
+    margin-bottom: 10px;
+    // background-color: green;
+    color: rgb(60, 110, 200);
+    border-radius: 20px;
+    padding:10px 20px;
+    border: 1px solid rgba(128, 128, 128, 0.507);
+    font-weight: bolder;
+    cursor: pointer;
+}
