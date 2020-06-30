@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 
 import { logout } from '../../actions/session_actions';
 import AuthHeader from './auth_header';
-import ProfileDropdown from './profile_dropdown';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
     return {
@@ -17,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(AuthHeader, ProfileDropdown);
+)(AuthHeader);

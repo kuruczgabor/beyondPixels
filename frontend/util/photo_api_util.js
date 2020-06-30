@@ -22,3 +22,17 @@ export const createPhoto = formData => {
         processData: false
     });
 };
+
+export const deletePhoto = photoId => {
+    return $.ajax({
+        method: 'DELETE',
+        url: `api/photos/${photoId}`
+    })
+}
+
+export const updatePhoto = photo => {
+    return $.ajax({
+        method: 'PATCH',
+        url: `api/photos/${photo.id}`
+    })
+}

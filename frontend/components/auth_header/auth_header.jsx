@@ -1,6 +1,5 @@
 import React, { isValidElement } from 'react';
 import { Link } from 'react-router-dom';
-// import ProfileDropdown from './profile_dropdown'
 
 const AuthHeader = ({ currentUser, logout }) => {
 

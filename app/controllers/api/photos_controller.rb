@@ -21,6 +21,23 @@ class Api::PhotosController < ApplicationController
         end
     end
 
+    def destroy
+        @post = Photo.find(params[:id])
+        if @post
+            @post.destroy
+            render :show
+        else
+            render ["Photo not found"]
+        end
+    end
+
+    def update
+        @post = Photo.find(params[:photo][:id])
+        render :show if @post.update(photo_params) 
+    end
+
+    private
+
     def photo_params
         params.require(:photo).permit(:title, :description, :author_id, :photo_file)
     end
