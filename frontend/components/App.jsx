@@ -23,9 +23,9 @@ const App = () => (
             {/* <Route path="/users/:userId" component={UserProfileContainer} /> */}
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <Route path="/users/:userId" component={UserProfileContainer} />
-            <Route path="/photos/new" component={UploadPhotoFormContainer} />
-            <Route path="/photos/:photoId" component={EditPhotoFormContainer} />
+            <Route exact path="/users/:userId" component={UserProfileContainer} />
+            <Route exact path="/photos/new" component={UploadPhotoFormContainer} />
+            <Route exact path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
 
             <Redirect to='/'/>
         </Switch>

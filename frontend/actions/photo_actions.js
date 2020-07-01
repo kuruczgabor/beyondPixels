@@ -52,6 +52,7 @@ export const deletePhoto = photoId => dispatch => {
 };
 
 export const updatePhoto = photo => dispatch => {
+    debugger
     return APIUtil.updatePhoto(photo).then(
         photo => dispatch(receivePhoto(photo))
     )

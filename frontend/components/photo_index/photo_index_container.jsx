@@ -3,7 +3,7 @@ import { fetchPhotos } from '../../actions/photo_actions';
 import PhotoIndex from './photo_index';
 
 const mapStateToProps = state => {
-    debugger
+    // debugger
     return {
         photos: Object.values(state.entities.photos)
     }

@@ -22,9 +22,9 @@ class Api::PhotosController < ApplicationController
     end
 
     def destroy
-        @post = Photo.find(params[:id])
-        if @post
-            @post.destroy
+        @photo = Photo.find(params[:id])
+        if @photo
+            @photo.destroy
             render :show
         else
             render ["Photo not found"]
@@ -32,8 +32,14 @@ class Api::PhotosController < ApplicationController
     end
 
     def update
-        @post = Photo.find(params[:photo][:id])
-        render :show if @post.update(photo_params) 
+        # debugger
+        @photo = Photo.find(params[:id])
+        if @photo.update(params.require(:photo).permit(:title, :description)) 
+            render @show
+        else
+            render json: @photo.errors.full_messages, status: 422
+        end
+        
     end
 
     private
