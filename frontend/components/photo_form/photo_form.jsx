@@ -113,7 +113,7 @@ class PhotoForm extends React.Component {
         }
         // const { title, description } = this.props.photo;
         // debugger
-        // const preview = this.state.photoUrl ? <img width="100%" src={this.state.photoUrl}/> : null;
+        const preview = this.state.photoUrl ? <img width="100%" src={this.state.photoUrl}/> : null;
         debugger
 
         return (
@@ -134,7 +134,7 @@ class PhotoForm extends React.Component {
                     <form className="photo-form" onSubmit={this.handleSubmit}>
 
                         <div className="photo-form-preview-env">
-                            {/* <div className="photo-form-preview">{preview}</div> */}
+                            <div className="photo-form-preview">{preview}</div>
                         </div>
 
                         <div className="photo-form-input">

@@ -41,11 +41,10 @@ class EditPhotoForm extends React.Component {
                 photo={this.props.photo}
                 deletePhoto={this.props.deletePhoto}
                 updatePhoto={this.props.updatePhoto}
-                />  
+            />  
         )
     }
 
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditPhotoForm)
