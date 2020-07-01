@@ -103,8 +103,11 @@ class PhotoForm extends React.Component {
             debugger
             return (
                 // <input id="photo-delete-button" type="submit" value="Delete Photo"  />
-                <input id="photo-delete-button" value="Delete Photo" onClick={() => this.props.deletePhoto(this.props.photo.id)}/>
+                
+                <input id="photo-delete-button" value="Delete Photo" onClick={() => this.props.deletePhoto(this.props.photo.id)} type="button"/>
+                // <button id="photo-delete-button" value="Delete Photo" onClick={() => this.props.deletePhoto(this.props.photo.id)} />
 
+                // <input id="photo-delete-button" onClick={() => this.props.deletePhoto(this.props.photo.id)}>Delete Photo</input>
             )
         }             
     }

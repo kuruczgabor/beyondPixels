@@ -1,0 +1,42 @@
+.photo-show-env {
+    background-color: rgb(23, 23, 23);
+    margin-top: 75px;
+}
+
+.photo-show-photo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.photo-show-details-env {
+    // background-color: rgb(248, 248, 248);
+    background-color: white;
+    height: 300px;
+    position: relative;
+}
+
+.photo-show-details {
+    box-sizing: border-box;
+    background-color: white;
+    top: 50px;
+    left: 50px;
+    position: absolute;
+    height: 130px;
+    width: 50%;
+    padding: 30px;
+    // border: 1px solid rgba(167, 161, 161, 0.639);
+    border-radius: 3px;
+}
+
+.photo-show-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+
+.photo-show-description {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 10px;
+    font-size: 16px;
+}

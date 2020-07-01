@@ -15,8 +15,8 @@ const photosReducer = (oldState = {}, action) => {
             const newPhoto = { [action.photo.id]: action.photo };
             return Object.assign({}, oldState, newPhoto)
         case REMOVE_PHOTO:
-            delete nextwState[action.postId]
-            return nextwState
+            delete nextState[action.postId]
+            return nextState
         default:
             return oldState;
     }
