@@ -7,7 +7,7 @@ import { deletePhoto, updatePhoto, fetchPhoto } from '../../actions/photo_action
 
 const mapStateToProps = (state, ownProps) => {
     // debugger
-    debugger
+    // debugger
     return {
         currentUserId: state.session.id,
         formType: 'Edit',

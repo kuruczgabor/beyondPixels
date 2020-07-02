@@ -20,9 +20,15 @@ class HomeFeed extends React.Component {
         // debugger
         return (
             <div className="home-env">
-                <div className="home-page-images">
-                    {photos}
+                <div className="home-env-inner">
+                    <div className="home-page-photos">
+                        <ul className="home-photos-list">
+                            {photos}
+                        </ul>
+                    </div>
                 </div>
+
+
             </div>
         )
     }

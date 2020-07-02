@@ -6,7 +6,7 @@ class PhotoForm extends React.Component {
         super(props)
         // debugger
         this.state = this.props.photo
-        debugger
+        // debugger
         // this.state = {
         //     title: this.props.photo.title || null,
         //     description: this.props.photo.description || null,
@@ -120,7 +120,7 @@ class PhotoForm extends React.Component {
         // const { title, description } = this.props.photo;
         // debugger
         const preview = this.state.photoUrl ? <img width="100%" src={this.state.photoUrl}/> : null;
-        debugger
+        // debugger
 
         return (
             <div className="photo-form-main">
