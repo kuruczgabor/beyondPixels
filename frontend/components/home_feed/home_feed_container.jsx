@@ -6,14 +6,14 @@ import HomeFeed from './home_feed';
 
 
 const mapStateToProps = state => {
-    debugger
+    // debugger
     return {
         photos: Object.values(state.entities.photos),
     };
 };
 
 const mapDispatchToProps = dispatch => {
-    debugger
+    // debugger
     return ({
         fetchPhotos: () => dispatch(fetchPhotos()),
     });

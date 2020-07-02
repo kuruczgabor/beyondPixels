@@ -19,22 +19,27 @@ const App = () => (
     <div>
         <Modal />
         <header className="header" >
-            <Link to="/"><h1>beyondPixels</h1></Link>
+            <Link to="/home"><h1>beyondPixels</h1></Link>
             <GreetingContainer />
         </header>
         <Switch>
-            <AuthRoute exact path="/" component={Splash} />
+            
             {/* <Route path="/users/:userId" component={UserProfileContainer} /> */}
 
+
+            
+            <ProtectedRoute exact path="/users/:userId" component={UserProfileContainer} />
+            <ProtectedRoute exact path="/home" component={HomeFeedContainer} />
+            <ProtectedRoute exact path="/photos/new" component={UploadPhotoFormContainer} />
+            <ProtectedRoute exact path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
+            <ProtectedRoute exact path="/photos/:photoId" component={PhotoShowContainer} />
+            
+            <AuthRoute exact path="/" component={Splash} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <Route exact path="/users/:userId" component={UserProfileContainer} />
-            <Route exact path="/home" component={HomeFeedContainer} />
-            <Route exact path="/photos/new" component={UploadPhotoFormContainer} />
-            <Route exact path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
-            <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
 
             <Redirect to='/'/>
+            <Route path='/' component={Splash} />
         </Switch>
     </div>
 );

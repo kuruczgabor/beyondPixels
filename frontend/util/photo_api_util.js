@@ -31,7 +31,7 @@ export const deletePhoto = photoId => {
 }
 
 export const updatePhoto = formData => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'PATCH',
         url: `api/photos/${formData.get('id')}`,

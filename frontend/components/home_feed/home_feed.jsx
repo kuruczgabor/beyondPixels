@@ -5,22 +5,24 @@ import PhotoIndexItem from '../photo_index/photo_index_item';
 class HomeFeed extends React.Component {
 
     componentDidMount() {
-        debugger
+        // debugger
         this.props.fetchPhotos();
     }
 
     render() {
-        debugger
+        // debugger
         if (!this.props.photos) return null;
 
         const photos = this.props.photos.map(photo => {
             return <PhotoIndexItem key={photo.id} photo={photo} />
         })
 
-        debugger
+        // debugger
         return (
-            <div>
-                {photos}
+            <div className="home-env">
+                <div className="home-page-images">
+                    {photos}
+                </div>
             </div>
         )
     }
