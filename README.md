@@ -1,24 +1,5 @@
-# README
+### README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# beyondPixels
+[beyondPixels](http://beyondpixels.herokuapp.com/), a 500px clone, is an application that allows amateur and professional photographers to share their world through their own lenses.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
