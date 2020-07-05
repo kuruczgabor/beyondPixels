@@ -12,9 +12,13 @@
 * Users can sign up, log in, log out or just simply use the demo login option
 * Users can upload their favorite photos to share them with other users
 * Users can edit or delete their photos
-* Clean and modern design
+* Clean and modern Photo Grid
 
 ![](app/assets/images/design.png)
+
+* Simple and user-friendly design
+
+![](app/assets/images/upload.png)
 
 ## Features under development
 * Follows
