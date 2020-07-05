@@ -6,11 +6,9 @@
 * Users can upload their favorite photos to share them with other users
 * Users can edit or delete their photos
 * Clean and modern Photo Grid
-
-![](app/assets/images/design.png)
-
 * Simple and user-friendly design
 
+![](app/assets/images/design.png)
 ![](app/assets/images/upload.png)
 
 ## Technologies
@@ -22,27 +20,28 @@
 
 ## Features under development
 * Follows
-    - logged in users can follow and unfollow other users
+    - Logged in users can follow and unfollow other users
 * Profile Page
-    - surface where users can see all the photos and information from a specific user
+    - Surface where users can see all the photos and information from a specific user
 * Home Feed
-    - surface where logged in users can see the newest photos from their followed users
-* Photo Upload/Edit
-    - errors in case of unsuccessful upload or edit
-    - successful upload/edit message
-    - redirecting to photo show page
-* Photo show page
-    - user information
-    - edit button
+    - Surface where logged in users can see the newest photos from their followed users
+* Photo Upload / Edit
+    - Errors in case of unsuccessful upload or edit
+    - Successful upload/edit message
+    - Redirecting to photo show page
+* Photo Show Page
+    - User information
+    - Edit button
     
 ## Upcoming features:
 * Discover
-    - surface for all the photos of the site; non-registered users can also see the photos
+    - Surface for all the photos of the site
+    - Non-registered users can also see the photos
 * Likes
-    - users can like photos
+    - Users can like photos
 * Comments
-    - users can comment photos
+    - Users can comment photos
 * Tags
-    - users can add tags to photos
+    - Users can add tags to photos
 * Notifications
-    - users get notified of likes, follows, comments... 
+    - Users get notified of likes, follows, comments... 
