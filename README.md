@@ -28,7 +28,7 @@
 * Home Feed
     - surface where logged in users can see the newest photos from their followed users
 * Photo Upload/Edit
-    - showing errors in case of unsuccessful upload or edit
+    - errors in case of unsuccessful upload or edit
     - successful upload/edit message
     - redirecting to photo show page
 * Photo show page
