@@ -32,12 +32,27 @@ class PhotoShow extends React.Component {
                     <img className="photo-show-photo" src={photoUrl} />
                 </div>
                 <div className="photo-show-details-env">
-                    <div className="photo-show-details">
-                        <p className="photo-show-title" >{title}</p>
-                        <p className="photo-show-description">{description}</p> 
+                    <ul className="photo-show-icons">
+                        <li><i className="fas fa-camera"></i></li>
+                        <li><i className="fas fa-user"></i></li>
+                        <li><i className="fas fa-calendar-day"></i></li>
+
+                        {/* <p className="photo-show-title" >{title}</p>
+                        <p className="photo-show-description">{description}</p>
+                        <i className="fas fa-camera"></i> 
+                        <i className="fas fa-user"></i>
+                        <i class="fas fa-calendar-day"></i>
                         {photoAuthor}
-                        {formattedCreatedAt}
-                    </div>
+                        {formattedCreatedAt} */}
+                    </ul>
+                    <ul className="photo-show-text">
+                        <li className="photo-show-text-info">
+                            <div className="photo-show-text-title">{title}</div>
+                            <div className="photo-show-text-description">{description}</div>
+                        </li>
+                        <li className="photo-show-author">{photoAuthor}</li>
+                        <li className="photo-show-date">{formattedCreatedAt}</li>
+                    </ul>
                 </div>
             </div>
 
