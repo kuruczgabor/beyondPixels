@@ -20,11 +20,12 @@ class PhotoShow extends React.Component {
 
     render() {
         if (!this.props.photo) return null;
-        const { title, description, photoUrl } = this.props.photo;
+        const { title, description, photoUrl, created_at } = this.props.photo;
 
+        const createdAt = this.props.photo.created_at.slice(0, 10).split('-')
+        const formattedCreatedAt = createdAt[1] + '/' + createdAt[2] + '/' + createdAt[0]
 
         const photoAuthor = this.props.photoAuthor ? this.props.photoAuthor.username : null
-
         return (
             <div>
                 <div className="photo-show-env">
@@ -35,6 +36,7 @@ class PhotoShow extends React.Component {
                         <p className="photo-show-title" >{title}</p>
                         <p className="photo-show-description">{description}</p> 
                         {photoAuthor}
+                        {formattedCreatedAt}
                     </div>
                 </div>
             </div>
