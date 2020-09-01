@@ -97,3 +97,24 @@
     margin-top: 32px;
     font-size: 20px;
 }
+
+.photo-show-edit-button {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    font-family: 'Roboto', sans-serif;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 10px 30px;
+}
+
+.photo-show-edit-button:hover {
+    background-color: rgba(156, 156, 156, 0.562);
+    cursor: pointer;
+}
+
+.photo-show-edit-button a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
