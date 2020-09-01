@@ -68,7 +68,8 @@ class SessionForm extends React.Component {
     }
 
     errorPopUp() {
-        if (this.props.formType === "Log in" && this.props.errors.length > 0) {
+        // debugger
+        if (this && this.props.formType === "Log in" && this.props.errors.length > 0) {
             return (
                 <div className='error-popup'>
                     {this.renderErrors()}

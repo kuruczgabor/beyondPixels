@@ -3,7 +3,7 @@ import React from 'react';
 class PhotoShow extends React.Component {
 
     componentDidMount() {
-
+        const that = this
         this.props.fetchPhoto(this.props.match.params.photoId)
             .then(res => {
                 const authorId = res.photo.author_id
@@ -20,12 +20,27 @@ class PhotoShow extends React.Component {
 
     render() {
         if (!this.props.photo) return null;
+        // if (!this.props.photoAuthor) return null;
+
         const { title, description, photoUrl, created_at } = this.props.photo;
 
-        const createdAt = this.props.photo.created_at.slice(0, 10).split('-')
+        // debugger
+        const createdAt = created_at.slice(0, 10).split('-')
         const formattedCreatedAt = createdAt[1] + '/' + createdAt[2] + '/' + createdAt[0]
+        // debugger
 
-        const photoAuthor = this.props.photoAuthor ? this.props.photoAuthor.username : null
+        const photoAuthor = this.props.users[this.props.photo.author_id] ? this.props.users[this.props.photo.author_id].username : null
+
+        // const photoAuthor = this.props.photoAuthor ? this.props.photoAuthor.username : null
+
+
+        // debugger
+        // const editPhotoButton = this.props.photoAuthor && this.props.photoAuthor.id === this.props.currentUserId ? (
+        //     <div>
+        //         button
+        //     </div>
+        // ) : null
+
         return (
             <div>
                 <div className="photo-show-env">
@@ -36,14 +51,6 @@ class PhotoShow extends React.Component {
                         <li><i className="fas fa-camera"></i></li>
                         <li><i className="fas fa-user"></i></li>
                         <li><i className="fas fa-calendar-day"></i></li>
-
-                        {/* <p className="photo-show-title" >{title}</p>
-                        <p className="photo-show-description">{description}</p>
-                        <i className="fas fa-camera"></i> 
-                        <i className="fas fa-user"></i>
-                        <i class="fas fa-calendar-day"></i>
-                        {photoAuthor}
-                        {formattedCreatedAt} */}
                     </ul>
                     <ul className="photo-show-text">
                         <li className="photo-show-text-info">
@@ -53,10 +60,9 @@ class PhotoShow extends React.Component {
                         <li className="photo-show-author">{photoAuthor}</li>
                         <li className="photo-show-date">{formattedCreatedAt}</li>
                     </ul>
+                    {/* {editPhotoButton} */}
                 </div>
             </div>
-
-
         )
     }
 }
