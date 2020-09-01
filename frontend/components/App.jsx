@@ -7,6 +7,7 @@ import LogInFormContainer from './session_form/login_form_container';
 import UserProfileContainer from './user_profile/user_profile_container';
 import UploadPhotoFormContainer from './photo_form/upload_photo_form_container';
 import EditPhotoFormContainer from './photo_form/edit_photo_form_container';
+// import PhotoAuthorShowContainer from './photo_show/photo_author_show_container';
 import PhotoShowContainer from './photo_show/photo_show_container';
 import PhotoIndexContainer from './photo_index/photo_index_container';
 import HomeFeedContainer from './home_feed/home_feed_container';
