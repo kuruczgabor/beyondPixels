@@ -7,7 +7,6 @@ import {
 const photosReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let nextState = Object.assign({}, oldState)
-    // debugger
     switch(action.type) {
         case RECEIVE_PHOTOS:
             return action.photos;
