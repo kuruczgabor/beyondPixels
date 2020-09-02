@@ -119,7 +119,7 @@ class PhotoForm extends React.Component {
         }
         // const { title, description } = this.props.photo;
         // debugger
-        const preview = this.state.photoUrl ? <img width="100%" src={this.state.photoUrl}/> : null;
+        const preview = this.state.photoUrl ? <img src={this.state.photoUrl}/> : null;
         // debugger
 
         return (
