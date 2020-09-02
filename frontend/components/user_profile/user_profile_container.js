@@ -4,8 +4,8 @@ import UserProfile from './user_profile';
 import { fetchPhotos } from '../../actions/photo_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
+        userId: ownProps.match.params.userId,
         user: state.entities.users[ownProps.match.params.userId],
         photos: Object.values(state.entities.photos)
     }

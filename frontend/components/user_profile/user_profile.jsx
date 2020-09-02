@@ -9,17 +9,13 @@ class UserProfile extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
+        this.props.fetchUser(this.props.userId)
         this.props.fetchPhotos();
     }
 
     render () {
-        // debugger
         const { user } = this.props;
-        // const userId = user.id
         if (!user) return null;
-        // debugger
-        // const userPhotos = this.props.
 
         const photos = this.props.photos.map(photo => {
             if (photo.author_id === this.props.user.id) {
