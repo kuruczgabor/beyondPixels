@@ -54,6 +54,9 @@ class Splash extends Component {
                 </div>
 
                 <footer className="splash-footer">
+                    <div className="splash-developer">
+                        © 2020 beyondPixels
+                    </div>
                     <ul>
                         <li><a href="https://github.com/kuruczgabor">GitHub</a></li>
                         <li><a href="https://www.gaborkurucz.com/">Portfolio</a></li>

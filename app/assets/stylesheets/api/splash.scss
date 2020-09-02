@@ -127,7 +127,6 @@
 }
 
 .splash-footer {
-
     // background-color: green;
     font-family: 'Roboto', sans-serif;
     height: 60px;
@@ -135,17 +134,21 @@
     // border-top: rgba(0, 0, 0, 0.863) solid 0.5;
     border-top: 1px solid rgba(121, 121, 121, 0.562);
     // box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
+    position: relative;
 }
 
 .splash-footer ul {
+    // background-color: brown;
     display: flex;
+    right: 50px;
     align-items: right;
+    position: absolute;
 }
 
 .splash-footer ul li {
     // background-color: honeydew;
     margin: 25px;
-    right: 20px;
+    // right: 20px;
     margin-left: 50px;
 }
 
@@ -157,6 +160,13 @@
 
 .splash-footer a:hover {
     color: rgba(3, 3, 3, 0.884);
+}
+
+.splash-developer {
+    position: absolute;
+    // background-color: chartreuse;
+    margin: 25px;
+    color: rgb(27, 27, 27);
 }
 
 .splash-join-community {
