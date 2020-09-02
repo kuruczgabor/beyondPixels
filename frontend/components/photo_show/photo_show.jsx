@@ -31,6 +31,7 @@ class PhotoShow extends React.Component {
         // debugger
 
         const photoAuthor = this.props.users[this.props.photo.author_id] ? this.props.users[this.props.photo.author_id].username : null
+        const photoAuthorId = this.props.users[this.props.photo.author_id] ? this.props.users[this.props.photo.author_id].id : null
 
         // const photoAuthor = this.props.photoAuthor ? this.props.photoAuthor.username : null
 
@@ -59,7 +60,7 @@ class PhotoShow extends React.Component {
                             <div className="photo-show-text-title">{title}</div>
                             <div className="photo-show-text-description">{description}</div>
                         </li>
-                        <li className="photo-show-author">{photoAuthor}</li>
+                        <li className="photo-show-author"><Link to={`/users/${photoAuthorId}`}>{photoAuthor}</Link></li>
                         <li className="photo-show-date">{formattedCreatedAt}</li>
                     </ul>
                     {editPhotoButton}

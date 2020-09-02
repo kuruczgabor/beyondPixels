@@ -91,6 +91,16 @@
 .photo-show-author {
     margin-top: 36px;
     font-size: 20px;
+    text-decoration: none;
+}
+
+.photo-show-author a{
+    text-decoration: none;
+    color: black;
+}
+
+.photo-show-author a:hover{
+    color:rgb(83, 133, 243);
 }
 
 .photo-show-date {
