@@ -37,10 +37,10 @@ class PhotoShow extends React.Component {
 
         // debugger
         const editPhotoButton = this.props.users[this.props.photo.author_id] && this.props.users[this.props.photo.author_id].id === this.props.currentUserId ? (
-            <div className="photo-show-edit-button">
-                {/* <Link to={`/#/photos/${this.props.photo.id}/edit`}>EDIT</Link> */}
-                <a href={`/photos/${this.props.photo.id}/edit`}>Edit Photo</a>
-            </div>
+            // <div className="photo-show-edit-button">
+            // <Link className="photo-show-edit-button" to={`/#/photos/${this.props.photo.id}/edit`}>EDIT</Link>
+                <a className="photo-show-edit-button" href={`/#/photos/${this.props.photo.id}/edit`}>Edit Photo</a>
+            /* </div> */
         ) : null
 
         return (

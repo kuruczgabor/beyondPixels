@@ -106,6 +106,9 @@
     border: 2px solid black;
     border-radius: 30px;
     padding: 10px 30px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
 .photo-show-edit-button:hover {
@@ -113,8 +116,8 @@
     cursor: pointer;
 }
 
-.photo-show-edit-button a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
+// .photo-show-edit-button a {
+//     text-decoration: none;
+//     color: black;
+//     font-weight: bold;
+// }
