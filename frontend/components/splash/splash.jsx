@@ -41,12 +41,24 @@ class Splash extends Component {
                         </li>
 
                     </ul>
+
+                </div>
+
+                <div className="splash-join-community">
+                    <h2>Join our photography community today</h2>
+                    <p>
+                        We want fresh, creative talent like you. Join our global network of 
+                        like-minded creators to be inspired by incredible photos daily, and get rewarded for your talents.
+                    </p>
+                    <Link to="/signup" id="splash-join-signup-button">Sign up</Link>
                 </div>
 
                 <footer className="splash-footer">
                     <ul>
-                        <li><a href="https://www.linkedin.com/in/kurucz-gabor/">LinkedIn</a></li>
                         <li><a href="https://github.com/kuruczgabor">GitHub</a></li>
+                        <li><a href="https://www.gaborkurucz.com/">Portfolio</a></li>
+                        <li><a href="https://www.linkedin.com/in/kurucz-gabor/">LinkedIn</a></li>
+                        <li><a href="https://angel.co/u/gaborkurucz">AngelList</a></li>
                     </ul>
                 </footer>
 

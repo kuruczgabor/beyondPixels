@@ -158,3 +158,42 @@
 .splash-footer a:hover {
     color: rgba(3, 3, 3, 0.884);
 }
+
+.splash-join-community {
+    background-color: rgb(14, 104, 107);
+    height: 400px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.splash-join-community h2 {
+    font-size: 36px;
+    font-weight: bold;
+    padding-top: 60px;
+    padding: 80px 20% 10px 20%;
+}
+
+.splash-join-community p {
+    padding: 30px 30% 60px 30%;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+#splash-join-signup-button {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 60px;
+    margin-top: 30px;
+    background-color: rgb(255, 255, 255);
+    line-height: 100%;
+    z-index: 3;
+}
+
+#splash-join-signup-button:hover {
+    color:rgb(83, 133, 243);
+}
