@@ -6,9 +6,11 @@ class Api::FollowingsController < ApplicationController
     end
 
     def create
-        @follow = Following.new(following_params)
+        debugger
+        @following = Following.new(following_params)
+        debugger
         if @following.save
-
+            render :show
         else
             render json: @follow.errors.full_messages, status: 422
         end
@@ -17,6 +19,7 @@ class Api::FollowingsController < ApplicationController
     private
 
     def following_params
+        debugger
         params.require(:following).permit(:follower_id, :followee_id)
     end
 

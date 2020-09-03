@@ -19,9 +19,11 @@ class UserProfile extends React.Component {
     handleFollow(e) {
         e.preventDefault();
         // debugger
-        const following = {
-            follower_id: this.props.currentUserId, 
-            followee_id: this.props.userId,
+        const following = { 
+            following: {
+                follower_id: this.props.currentUserId,
+                followee_id: parseInt(this.props.userId)
+            }
         }
         debugger
         this.props.createFollowing(following)

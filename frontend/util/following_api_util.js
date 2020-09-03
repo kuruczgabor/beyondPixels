@@ -7,13 +7,12 @@ export const fetchFollowings = () => {
 }
 
 export const createFollowing = (formData) => {
-    return (
-        $.ajax({
-            url: 'api/followings',
-            method: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false
-        })
-    )
+    debugger
+    return $.ajax({
+        url: 'api/followings',
+        method: 'POST',
+        data: formData,
+        // contentType: false,
+        // processData: false
+    })
 }

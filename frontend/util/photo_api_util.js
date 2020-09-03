@@ -13,7 +13,7 @@ export const fetchPhoto = photoId => (
 );
 
 export const createPhoto = formData => {
-    // debugger
+    debugger
     return $.ajax({
         method: 'POST',
         url: '/api/photos',
@@ -31,7 +31,7 @@ export const deletePhoto = photoId => {
 }
 
 export const updatePhoto = formData => {
-    // debugger
+    debugger
     return $.ajax({
         method: 'PATCH',
         url: `api/photos/${formData.get('id')}`,

@@ -19,8 +19,8 @@ export const fetchFollowings = () => dispatch => (
     )
 );
 
-export const createFollowing = () => dispatch => (
-    APIUtil.createFollowing().then(
+export const createFollowing = (following) => dispatch => (
+    APIUtil.createFollowing(following).then(
         following => dispatch(receiveFollowing(following))
     )
 );
