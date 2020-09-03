@@ -11,6 +11,21 @@ class UserProfile extends React.Component {
         this.handleFollow = this.handleFollow.bind(this)
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.userId !== this.props.userId) {
+            this.props.fetchUser(this.props.userId)
+        }
+        // debugger
+        if (prevProps.followings) {
+            Object.values(prevProps.followings).forEach(following => {
+                // debugger
+                if (!following.follower_username) {
+                    this.props.fetchFollowings()
+                }
+            })
+        }
+    }
+
     componentDidMount() {
         // debugger
         this.props.fetchUser(this.props.userId)
@@ -30,11 +45,14 @@ class UserProfile extends React.Component {
     }
 
     render () {
-        const { user } = this.props;
-        if (!user) return null;
+        // debugger
+        // const { user } = this.props;
+        // if (!user) return null;
+        // debugger
+        const userName = this.props.user ? this.props.user.username : null 
 
         const photos = this.props.photos.map(photo => {
-            if (photo.author_id === this.props.user.id) {
+            if (this.props.user && photo.author_id === this.props.user.id) {
                 return <PhotoIndexItem key={photo.id} photo={photo} />
             }
         })
@@ -49,39 +67,41 @@ class UserProfile extends React.Component {
         let currentFollowingId;
         let that = this;
 
-        if (!this.props.followings) return null
-
-        Object.entries(this.props.followings).forEach((following) => {
-            // debugger
-            if (following[1]["follower_id"] === this.props.currentUserId && following[1]["followee_id"] === this.props.userId) {
-                isAlreadyFollowing = true
-                currentFollowingId = parseInt(following[0])
-            }
-            // if (following[1]["follower_id"] === this.props.userId) followeeNumber++
-            // if (following[1]["followee_id"] === this.props.userId) followerNumber++
-            // debugger
-            if (following[1]["follower_id"] === that.props.userId) {
+        // if (!this.props.followings) return null
+        if (this.props.followings) {
+            Object.entries(this.props.followings).forEach((following) => {
                 // debugger
-                followeeNumber++
-                // followees[following[1]["followee_id"]] = following[1]
-                followees[following[0]] = {
-                    followingId: following[1].id,
-                    userId: following[1].followee_id,
-                    userName: following[1].followee_username
+                if (following[1]["follower_id"] === this.props.currentUserId && following[1]["followee_id"] === this.props.userId) {
+                    isAlreadyFollowing = true
+                    currentFollowingId = parseInt(following[0])
                 }
-            }
-
-            if (following[1]["followee_id"] === that.props.userId) {
+                // if (following[1]["follower_id"] === this.props.userId) followeeNumber++
+                // if (following[1]["followee_id"] === this.props.userId) followerNumber++
                 // debugger
-                followerNumber++
-                // followers[following[1]["follower_id"]] = following[1]
-                followers[following[0]] = {
-                    followingId: following[1].id,
-                    userId: following[1].follower_id,
-                    userName: following[1].follower_username
+                if (following[1]["follower_id"] === that.props.userId) {
+                    // debugger
+                    followeeNumber++
+                    // followees[following[1]["followee_id"]] = following[1]
+                    followees[following[0]] = {
+                        followingId: following[1].id,
+                        userId: following[1].followee_id,
+                        userName: following[1].followee_username
+                    }
                 }
-            }
-        })
+
+                if (following[1]["followee_id"] === that.props.userId) {
+                    // debugger
+                    followerNumber++
+                    // followers[following[1]["follower_id"]] = following[1]
+                    followers[following[0]] = {
+                        followingId: following[1].id,
+                        userId: following[1].follower_id,
+                        userName: following[1].follower_username
+                    }
+                }
+            })
+        }
+        
 
         // debugger
 
@@ -97,7 +117,7 @@ class UserProfile extends React.Component {
             <div className="user-profile-env">
 
                 <div className="user-profile-info">
-                    {user.username}
+                    {userName}
                 </div> 
 
                 <div>

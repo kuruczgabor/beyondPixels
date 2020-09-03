@@ -26,8 +26,6 @@ const App = () => (
         <Switch>
             
             {/* <Route path="/users/:userId" component={UserProfileContainer} /> */}
-
-
             
             <ProtectedRoute exact path="/users/:userId" component={UserProfileContainer} />
             <ProtectedRoute exact path="/home" component={HomeFeedContainer} />
