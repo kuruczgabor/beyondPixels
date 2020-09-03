@@ -25,9 +25,15 @@ class UserProfile extends React.Component {
                 followee_id: this.props.userId
             }
         }
-        debugger
+        // debugger
         this.props.createFollowing(following)
     }
+
+    // handleUnfollow(e) {
+    //     debugger
+    //     e.preventDefault();
+    //     this.props.deleteFollowing(e)
+    // }
 
     render () {
         const { user } = this.props;
@@ -49,17 +55,25 @@ class UserProfile extends React.Component {
         } else if (this.props.followings) {
             // debugger
             let isAlreadyFollowing = false
+            let currentFollowingId;
             let that = this
-            Object.values(this.props.followings).forEach(following => {
-                if (following["follower_id"] === that.props.currentUserId && following["followee_id"] === that.props.userId) {
+            // Object.values(this.props.followings).forEach(following => {
+            //     if (following["follower_id"] === that.props.currentUserId && following["followee_id"] === that.props.userId) {
+            //         isAlreadyFollowing = true
+            //     }
+            // })
+            Object.entries(this.props.followings).forEach(following => {
+                // debugger
+                if (following[1]["follower_id"] === that.props.currentUserId && following[1]["followee_id"] === that.props.userId) {
                     isAlreadyFollowing = true
+                    currentFollowingId = parseInt(following[0])
                 }
             })
 
             if (isAlreadyFollowing === false) {
                 followButton = <button onClick={this.handleFollow}>FOLLOW</button>
             } else {
-                followButton = <button onClick={this.handleFollow}>UNFOLLOW</button>
+                followButton = <button onClick={() => this.props.deleteFollowing(currentFollowingId)}>UNFOLLOW</button>
             }
 
             

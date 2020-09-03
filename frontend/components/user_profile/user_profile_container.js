@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
 import UserProfile from './user_profile';
 import { fetchPhotos } from '../../actions/photo_actions';
-import { fetchFollowings, createFollowing } from '../../actions/following_actions';
+import { fetchFollowings, createFollowing, deleteFollowing } from '../../actions/following_actions';
 
 const mapStateToProps = (state, ownProps) => {
     // debugger
@@ -20,7 +20,8 @@ const mapDispatchToProps = dispatch => {
         fetchUser: userId => dispatch(fetchUser(userId)),
         fetchPhotos: () => dispatch(fetchPhotos()),
         fetchFollowings: () => dispatch(fetchFollowings()),
-        createFollowing: following => dispatch(createFollowing(following))
+        createFollowing: following => dispatch(createFollowing(following)),
+        deleteFollowing: followingId => dispatch(deleteFollowing(followingId))
     }
 };
 

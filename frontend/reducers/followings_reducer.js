@@ -1,6 +1,7 @@
 import {
     RECEIVE_FOLLOWINGS,
-    RECEIVE_FOLLOWING
+    RECEIVE_FOLLOWING,
+    REMOVE_FOLLOWING
 } from '../actions/following_actions';
 
 const followingsReducer = (oldState = {}, action) => {
@@ -10,9 +11,11 @@ const followingsReducer = (oldState = {}, action) => {
         case RECEIVE_FOLLOWINGS:
             return action.followings
         case RECEIVE_FOLLOWING:
-            debugger
-            const newFollowing = { [action.following.id]: action.following}
-            return Object.assign({}, oldState, newFollowing)
+            nextState.followings[action.following.id] = action.following
+            return nextState
+        case REMOVE_FOLLOWING:
+            delete nextState.followings[action.followingId]
+            return nextState
         default:
             return oldState;
     }

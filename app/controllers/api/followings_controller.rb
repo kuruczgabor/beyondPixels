@@ -17,14 +17,15 @@ class Api::FollowingsController < ApplicationController
     end
 
     def destroy
-        debugger
+        # debugger
         @following = Following.find(params[:id])
+        @following.destroy
+        render :show
     end
 
     private
 
     def following_params
-        # debugger
         params.require(:following).permit(:follower_id, :followee_id)
     end
 
