@@ -1,7 +1,7 @@
 import React from 'react';
 import PhotoIndexContainer from '../photo_index/photo_index_container';
 import PhotoIndexItem from '../photo_index/photo_index_item';
-import FollowingIndex from '../following/following_index';
+import FollowingIndexContainer from '../following/following_index_container';
 
 class UserProfile extends React.Component {
 
@@ -12,6 +12,7 @@ class UserProfile extends React.Component {
     }
 
     componentDidMount() {
+        // debugger
         this.props.fetchUser(this.props.userId)
         this.props.fetchPhotos();
         this.props.fetchFollowings();
@@ -46,6 +47,7 @@ class UserProfile extends React.Component {
 
         let isAlreadyFollowing = false;
         let currentFollowingId;
+        let that = this;
 
         if (!this.props.followings) return null
 
@@ -57,23 +59,23 @@ class UserProfile extends React.Component {
             }
             // if (following[1]["follower_id"] === this.props.userId) followeeNumber++
             // if (following[1]["followee_id"] === this.props.userId) followerNumber++
-
-            if (following[1]["follower_id"] === this.props.userId) {
+            // debugger
+            if (following[1]["follower_id"] === that.props.userId) {
                 // debugger
                 followeeNumber++
                 // followees[following[1]["followee_id"]] = following[1]
-                followees[0] = {
+                followees[following[0]] = {
                     followingId: following[1].id,
                     userId: following[1].followee_id,
                     userName: following[1].followee_username
                 }
             }
 
-            if (following[1]["followee_id"] === this.props.userId) {
+            if (following[1]["followee_id"] === that.props.userId) {
                 // debugger
                 followerNumber++
                 // followers[following[1]["follower_id"]] = following[1]
-                followers[0] = {
+                followers[following[0]] = {
                     followingId: following[1].id,
                     userId: following[1].follower_id,
                     userName: following[1].follower_username
@@ -109,12 +111,12 @@ class UserProfile extends React.Component {
 
                 <div>
                     Followers:
-                    <FollowingIndex followers={followers} />
+                    <FollowingIndexContainer followers={followers} />
                 </div>
 
                 <div>
                     Followees:
-                    <FollowingIndex followees={followees} />
+                    <FollowingIndexContainer followees={followees} />
                 </div>
 
                 <div className="home-env">

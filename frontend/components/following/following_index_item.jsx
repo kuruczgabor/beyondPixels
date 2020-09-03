@@ -7,12 +7,13 @@ const FollowingIndexItem = props => {
     // if (!this.props) return null
 
     const userName = props.followingUser.userName
-    // debugger
 
     return (
         <li>
             <div>
-                {userName}
+                <Link to={`/users/${props.followingUser.userId}`}>
+                    {userName}                
+                </Link>
             </div>
         </li>
     )
