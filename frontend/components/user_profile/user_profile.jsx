@@ -6,11 +6,25 @@ class UserProfile extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.handleFollow = this.handleFollow.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchUser(this.props.userId)
         this.props.fetchPhotos();
+        this.props.fetchFollowings();
+    }
+
+    handleFollow(e) {
+        e.preventDefault();
+        // debugger
+        const following = {
+            follower_id: this.props.currentUserId, 
+            followee_id: this.props.userId,
+        }
+        debugger
+        this.props.createFollowing(following)
     }
 
     render () {
@@ -29,6 +43,8 @@ class UserProfile extends React.Component {
                 <div className="user-profile-info">
                     {user.username}
                 </div> 
+
+                <button onClick={this.handleFollow}>FOLLOW</button>
 
                 <div className="home-env">
                     <div className="home-env-inner">

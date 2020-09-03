@@ -6,7 +6,7 @@ export const fetchFollowings = () => {
     )
 }
 
-export const createFollowing = () => {
+export const createFollowing = (formData) => {
     return (
         $.ajax({
             url: 'api/followings',
