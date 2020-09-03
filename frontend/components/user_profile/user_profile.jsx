@@ -45,34 +45,55 @@ class UserProfile extends React.Component {
             }
         })
 
-        let followButton;
-        let followerNumber;
-        let followeeNumber;
+        let followButton = null;
+        let followerNumber = 0;
+        let followeeNumber = 0;
+        let isAlreadyFollowing = false;
+        let currentFollowingId;
 
-        if (this.props.currentUserId === this.props.userId) {
-            followButton = null
-        } else if (this.props.followings) {
-            let isAlreadyFollowing = false
-            let currentFollowingId;
-            let followers = 0;
-            let followees = 0;
-            let that = this
-            Object.entries(this.props.followings).forEach(following => {
-                if (following[1]["follower_id"] === that.props.currentUserId && following[1]["followee_id"] === that.props.userId) {
-                    isAlreadyFollowing = true
-                    currentFollowingId = parseInt(following[0])
-                }
-                if (following[1]["follower_id"] === that.props.currentUserId) followees ++
-                if (following[1]["followee_id"] === that.props.currentUserId) followers++
-            })
+        if (!this.props.followings) return null
+
+        Object.entries(this.props.followings).forEach(following => {
+            if (following[1]["follower_id"] === this.props.currentUserId && following[1]["followee_id"] === this.props.userId) {
+                isAlreadyFollowing = true
+                currentFollowingId = parseInt(following[0])
+            }
+            if (following[1]["follower_id"] === this.props.userId) followeeNumber++
+            if (following[1]["followee_id"] === this.props.userId) followerNumber++
+        })
+
+        if (this.props.followings && this.props.currentUserId !== this.props.userId) {
             if (isAlreadyFollowing === false) {
                 followButton = <button onClick={this.handleFollow}>FOLLOW</button>
             } else {
                 followButton = <button onClick={() => this.props.deleteFollowing(currentFollowingId)}>UNFOLLOW</button>
             }
-            followerNumber = followers;
-            followeeNumber = followees;
         }
+
+        // if (this.props.currentUserId === this.props.userId) {
+        //     followButton = null
+        // } else if (this.props.followings) {
+        //     let isAlreadyFollowing = false
+        //     let currentFollowingId;
+        //     let followers = 0;
+        //     let followees = 0;
+        //     let that = this
+        //     Object.entries(this.props.followings).forEach(following => {
+        //         if (following[1]["follower_id"] === that.props.currentUserId && following[1]["followee_id"] === that.props.userId) {
+        //             isAlreadyFollowing = true
+        //             currentFollowingId = parseInt(following[0])
+        //         }
+        //         if (following[1]["follower_id"] === that.props.userId) followees ++
+        //         if (following[1]["followee_id"] === that.props.userId) followers++
+        //     })
+        //     if (isAlreadyFollowing === false) {
+        //         followButton = <button onClick={this.handleFollow}>FOLLOW</button>
+        //     } else {
+        //         followButton = <button onClick={() => this.props.deleteFollowing(currentFollowingId)}>UNFOLLOW</button>
+        //     }
+        //     followerNumber = followers;
+        //     followeeNumber = followees;
+        // }
 
         // const followerNumber = this.props.followings ? (
         // <div>
