@@ -18,22 +18,14 @@ class UserProfile extends React.Component {
 
     handleFollow(e) {
         e.preventDefault();
-        // debugger
         const following = { 
             following: {
                 follower_id: this.props.currentUserId,
                 followee_id: this.props.userId
             }
         }
-        // debugger
         this.props.createFollowing(following)
     }
-
-    // handleUnfollow(e) {
-    //     debugger
-    //     e.preventDefault();
-    //     this.props.deleteFollowing(e)
-    // }
 
     render () {
         const { user } = this.props;
@@ -48,6 +40,9 @@ class UserProfile extends React.Component {
         let followButton = null;
         let followerNumber = 0;
         let followeeNumber = 0;
+        let followers = {};
+        let followees = {};
+
         let isAlreadyFollowing = false;
         let currentFollowingId;
 
@@ -58,8 +53,18 @@ class UserProfile extends React.Component {
                 isAlreadyFollowing = true
                 currentFollowingId = parseInt(following[0])
             }
-            if (following[1]["follower_id"] === this.props.userId) followeeNumber++
-            if (following[1]["followee_id"] === this.props.userId) followerNumber++
+            // if (following[1]["follower_id"] === this.props.userId) followeeNumber++
+            // if (following[1]["followee_id"] === this.props.userId) followerNumber++
+
+            if (following[1]["follower_id"] === this.props.userId) {
+                followeeNumber++
+                followees[following[0]] = following[1]['followee_username']
+            }
+
+            if (following[1]["followee_id"] === this.props.userId) {
+                followerNumber++
+                followers[following[0]] = following[1]['follower_username']
+            }
         })
 
         if (this.props.followings && this.props.currentUserId !== this.props.userId) {
@@ -69,43 +74,6 @@ class UserProfile extends React.Component {
                 followButton = <button onClick={() => this.props.deleteFollowing(currentFollowingId)}>UNFOLLOW</button>
             }
         }
-
-        // if (this.props.currentUserId === this.props.userId) {
-        //     followButton = null
-        // } else if (this.props.followings) {
-        //     let isAlreadyFollowing = false
-        //     let currentFollowingId;
-        //     let followers = 0;
-        //     let followees = 0;
-        //     let that = this
-        //     Object.entries(this.props.followings).forEach(following => {
-        //         if (following[1]["follower_id"] === that.props.currentUserId && following[1]["followee_id"] === that.props.userId) {
-        //             isAlreadyFollowing = true
-        //             currentFollowingId = parseInt(following[0])
-        //         }
-        //         if (following[1]["follower_id"] === that.props.userId) followees ++
-        //         if (following[1]["followee_id"] === that.props.userId) followers++
-        //     })
-        //     if (isAlreadyFollowing === false) {
-        //         followButton = <button onClick={this.handleFollow}>FOLLOW</button>
-        //     } else {
-        //         followButton = <button onClick={() => this.props.deleteFollowing(currentFollowingId)}>UNFOLLOW</button>
-        //     }
-        //     followerNumber = followers;
-        //     followeeNumber = followees;
-        // }
-
-        // const followerNumber = this.props.followings ? (
-        // <div>
-        //     {Object.keys(this.props.followings).length}
-        // </div>) : null
-
-        // let followerNumber;
-        // if (this.props.followings) {
-        //     let followers = 0;
-        //     let followees
-        //     Object.values(this.props.followings).forEach
-        // }
         
         return (
             <div className="user-profile-env">
@@ -122,6 +90,7 @@ class UserProfile extends React.Component {
                     <li>{followerNumber} Followers</li>
                     <li>{followeeNumber} Following</li>
                 </ul>
+
 
                 <div className="home-env">
                     <div className="home-env-inner">
