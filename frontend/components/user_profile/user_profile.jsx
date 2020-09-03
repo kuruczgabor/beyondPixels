@@ -45,40 +45,47 @@ class UserProfile extends React.Component {
             }
         })
 
-        // const followButton = this.props.currentUserId !== this.props.userId ? 
-        // <>hello</> : <>hi</>
-
         let followButton;
-        // debugger
+        let followerNumber;
+        let followeeNumber;
+
         if (this.props.currentUserId === this.props.userId) {
             followButton = null
         } else if (this.props.followings) {
-            // debugger
             let isAlreadyFollowing = false
             let currentFollowingId;
+            let followers = 0;
+            let followees = 0;
             let that = this
-            // Object.values(this.props.followings).forEach(following => {
-            //     if (following["follower_id"] === that.props.currentUserId && following["followee_id"] === that.props.userId) {
-            //         isAlreadyFollowing = true
-            //     }
-            // })
             Object.entries(this.props.followings).forEach(following => {
-                // debugger
                 if (following[1]["follower_id"] === that.props.currentUserId && following[1]["followee_id"] === that.props.userId) {
                     isAlreadyFollowing = true
                     currentFollowingId = parseInt(following[0])
                 }
+                if (following[1]["follower_id"] === that.props.currentUserId) followees ++
+                if (following[1]["followee_id"] === that.props.currentUserId) followers++
             })
-
             if (isAlreadyFollowing === false) {
                 followButton = <button onClick={this.handleFollow}>FOLLOW</button>
             } else {
                 followButton = <button onClick={() => this.props.deleteFollowing(currentFollowingId)}>UNFOLLOW</button>
             }
-
-            
+            followerNumber = followers;
+            followeeNumber = followees;
         }
 
+        // const followerNumber = this.props.followings ? (
+        // <div>
+        //     {Object.keys(this.props.followings).length}
+        // </div>) : null
+
+        // let followerNumber;
+        // if (this.props.followings) {
+        //     let followers = 0;
+        //     let followees
+        //     Object.values(this.props.followings).forEach
+        // }
+        
         return (
             <div className="user-profile-env">
 
@@ -86,8 +93,14 @@ class UserProfile extends React.Component {
                     {user.username}
                 </div> 
 
-                {/* <button onClick={this.handleFollow}>FOLLOW</button> */}
-                {followButton}
+                <div>
+                    {followButton}
+                </div>
+
+                <ul>
+                    <li>{followerNumber} Followers</li>
+                    <li>{followeeNumber} Following</li>
+                </ul>
 
                 <div className="home-env">
                     <div className="home-env-inner">
