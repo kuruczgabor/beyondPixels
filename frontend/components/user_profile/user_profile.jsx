@@ -22,7 +22,7 @@ class UserProfile extends React.Component {
         const following = { 
             following: {
                 follower_id: this.props.currentUserId,
-                followee_id: parseInt(this.props.userId)
+                followee_id: this.props.userId
             }
         }
         debugger
@@ -39,6 +39,32 @@ class UserProfile extends React.Component {
             }
         })
 
+        // const followButton = this.props.currentUserId !== this.props.userId ? 
+        // <>hello</> : <>hi</>
+
+        let followButton;
+        // debugger
+        if (this.props.currentUserId === this.props.userId) {
+            followButton = null
+        } else if (this.props.followings) {
+            // debugger
+            let isAlreadyFollowing = false
+            let that = this
+            Object.values(this.props.followings).forEach(following => {
+                if (following["follower_id"] === that.props.currentUserId && following["followee_id"] === that.props.userId) {
+                    isAlreadyFollowing = true
+                }
+            })
+
+            if (isAlreadyFollowing === false) {
+                followButton = <button onClick={this.handleFollow}>FOLLOW</button>
+            } else {
+                followButton = <button onClick={this.handleFollow}>UNFOLLOW</button>
+            }
+
+            
+        }
+
         return (
             <div className="user-profile-env">
 
@@ -46,7 +72,8 @@ class UserProfile extends React.Component {
                     {user.username}
                 </div> 
 
-                <button onClick={this.handleFollow}>FOLLOW</button>
+                {/* <button onClick={this.handleFollow}>FOLLOW</button> */}
+                {followButton}
 
                 <div className="home-env">
                     <div className="home-env-inner">

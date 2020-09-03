@@ -6,9 +6,9 @@ class Api::FollowingsController < ApplicationController
     end
 
     def create
-        debugger
+        # debugger
         @following = Following.new(following_params)
-        debugger
+        # debugger
         if @following.save
             render :show
         else
@@ -16,10 +16,15 @@ class Api::FollowingsController < ApplicationController
         end
     end
 
+    def destroy
+        debugger
+        @following = Following.find(params[:id])
+    end
+
     private
 
     def following_params
-        debugger
+        # debugger
         params.require(:following).permit(:follower_id, :followee_id)
     end
 

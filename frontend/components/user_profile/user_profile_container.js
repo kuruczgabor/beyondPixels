@@ -8,9 +8,10 @@ const mapStateToProps = (state, ownProps) => {
     // debugger
     return {
         currentUserId: state.session.id,
-        userId: ownProps.match.params.userId,
+        userId: parseInt(ownProps.match.params.userId),
         user: state.entities.users[ownProps.match.params.userId],
-        photos: Object.values(state.entities.photos)
+        photos: Object.values(state.entities.photos),
+        followings: state.entities.followings.followings
     }
 };
 
