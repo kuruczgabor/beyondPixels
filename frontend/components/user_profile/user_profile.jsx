@@ -1,6 +1,7 @@
 import React from 'react';
 import PhotoIndexContainer from '../photo_index/photo_index_container';
 import PhotoIndexItem from '../photo_index/photo_index_item';
+import FollowingIndex from '../following/following_index';
 
 class UserProfile extends React.Component {
 
@@ -48,7 +49,8 @@ class UserProfile extends React.Component {
 
         if (!this.props.followings) return null
 
-        Object.entries(this.props.followings).forEach(following => {
+        Object.entries(this.props.followings).forEach((following) => {
+            // debugger
             if (following[1]["follower_id"] === this.props.currentUserId && following[1]["followee_id"] === this.props.userId) {
                 isAlreadyFollowing = true
                 currentFollowingId = parseInt(following[0])
@@ -57,15 +59,29 @@ class UserProfile extends React.Component {
             // if (following[1]["followee_id"] === this.props.userId) followerNumber++
 
             if (following[1]["follower_id"] === this.props.userId) {
+                // debugger
                 followeeNumber++
-                followees[following[0]] = following[1]['followee_username']
+                // followees[following[1]["followee_id"]] = following[1]
+                followees[0] = {
+                    followingId: following[1].id,
+                    userId: following[1].followee_id,
+                    userName: following[1].followee_username
+                }
             }
 
             if (following[1]["followee_id"] === this.props.userId) {
+                // debugger
                 followerNumber++
-                followers[following[0]] = following[1]['follower_username']
+                // followers[following[1]["follower_id"]] = following[1]
+                followers[0] = {
+                    followingId: following[1].id,
+                    userId: following[1].follower_id,
+                    userName: following[1].follower_username
+                }
             }
         })
+
+        // debugger
 
         if (this.props.followings && this.props.currentUserId !== this.props.userId) {
             if (isAlreadyFollowing === false) {
@@ -91,6 +107,15 @@ class UserProfile extends React.Component {
                     <li>{followeeNumber} Following</li>
                 </ul>
 
+                <div>
+                    Followers:
+                    <FollowingIndex followers={followers} />
+                </div>
+
+                <div>
+                    Followees:
+                    <FollowingIndex followees={followees} />
+                </div>
 
                 <div className="home-env">
                     <div className="home-env-inner">
