@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import FollowingIndexItem from './following_index_item';
 import { createFollowing, deleteFollowing, fetchFollowings } from '../../actions/following_actions';
+import { closeModal } from '../../actions/modal_actions';
 // import { fetchFollowings } from '../../util/following_api_util';
 
 const mapStateToProps = state => {
@@ -15,7 +16,8 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchFollowings: () => dispatch(fetchFollowings()),
         createFollowing: following => dispatch(createFollowing(following)),
-        deleteFollowing: followingId => dispatch(deleteFollowing(followingId))
+        deleteFollowing: followingId => dispatch(deleteFollowing(followingId)),
+        closeModal: () => dispatch(closeModal())
     }
 }
 

@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
         ),
         followeesListButton: (
             <button onClick={() => dispatch(openModal('followees'))}>
-                Followees
+                Following
             </button>
         ),
         closeModal: () => dispatch(closeModal())

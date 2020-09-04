@@ -123,9 +123,9 @@ class UserProfile extends React.Component {
         
         if (this.props.followings && this.props.currentUserId !== this.props.userId) {
             if (isAlreadyFollowing === false) {
-                followButton = <button onClick={this.handleFollow}>FOLLOW</button>
+                followButton = <button onClick={this.handleFollow}>Follow</button>
             } else {
-                followButton = <button onClick={() => this.props.deleteFollowing(currentFollowingId)}>UNFOLLOW</button>
+                followButton = <button onClick={() => this.props.deleteFollowing(currentFollowingId)}>Unfollow</button>
             }
         } 
         
@@ -135,21 +135,27 @@ class UserProfile extends React.Component {
             <div className="user-profile-env">
 
                 <div className="user-profile-info">
-                    {userName}
+                    <h2>{userName}</h2>
+                    {followButton}
+                    <ul>
+                        <li>{followerNumber} {this.props.followersListButton}</li>
+                        <li>{followeeNumber} {this.props.followeesListButton}</li>
+                        <li>{numberOfPhotos} Photos</li>
+                    </ul>
                 </div> 
-
+{/* 
                 <div>
                     {followButton}
-                </div>
+                </div> */}
 
-                <ul>
-                    <li>{followerNumber} Followers</li>
-                    <li>{followeeNumber} Following</li>
+                {/* <ul>
+                    <li>{followerNumber} {this.props.followersListButton}</li>
+                    <li>{followeeNumber} {this.props.followeesListButton}</li>
                     <li>{numberOfPhotos} Photos</li>
-                </ul>
+                </ul> */}
 
-                {this.props.followersListButton}
-                {this.props.followeesListButton}
+                {/* {this.props.followersListButton}
+                {this.props.followeesListButton} */}
 
                 {/* <div>
                     Followers:

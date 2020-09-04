@@ -82,6 +82,7 @@ class FollowingIndex extends React.Component {
         
         return (
             <div className="following-modal">
+                <h2>{this.props.indexType === "followers" ? "Followers" : "Following"}</h2>
                 <ul className="following-modal-list">
                     {
                         Object.entries(followingUsers).map(followingUser => {

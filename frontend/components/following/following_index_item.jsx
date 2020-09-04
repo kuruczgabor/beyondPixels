@@ -68,7 +68,7 @@ class FollowingIndexItem extends React.Component {
 
         return (
             <li className="following-modal-item">
-                <Link className="following-modal-item-username" to={`/users/${this.props.followingUser.userId}`}>{userName}</Link>
+                <Link onClick={() => this.props.closeModal()} className="following-modal-item-username" to={`/users/${this.props.followingUser.userId}`}>{userName}</Link>
                 {followButton}
             </li >
         )

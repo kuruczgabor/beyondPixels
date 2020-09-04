@@ -1,13 +1,22 @@
 .following-modal {
-//   background-color: hotpink;
-  width: 460px;
-  max-height: 660px;
+    width: 460px;
+    max-height: 660px;
+    background-color: white;
+    border-radius: 4px;
+    padding: 30px;
+}
+
+.following-modal h2 {
+    text-align: center;    
+    font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 40px;
 }
 
 .following-modal-list {
-    background-color: white;
-    padding: 30px;
-    border-radius: 4px;
+
 }
 
 .following-modal-item {
@@ -30,8 +39,8 @@
 
 .following-modal-item button:hover {
     background-color: rgba(45, 113, 202, 0.788);
-    cursor: pointer;    
-}
+    cursor: pointer;
+}    
 
 .following-modal-item-username {
     color: black;
