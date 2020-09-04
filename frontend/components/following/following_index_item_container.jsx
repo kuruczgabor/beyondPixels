@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import FollowingIndexItem from './following_index_item';
-import { createFollowing, deleteFollowing } from '../../actions/following_actions';
+import { createFollowing, deleteFollowing, fetchFollowings } from '../../actions/following_actions';
+// import { fetchFollowings } from '../../util/following_api_util';
 
 const mapStateToProps = state => {
     // debugger
@@ -12,6 +13,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     // debugger
     return {
+        fetchFollowings: () => dispatch(fetchFollowings()),
         createFollowing: following => dispatch(createFollowing(following)),
         deleteFollowing: followingId => dispatch(deleteFollowing(followingId))
     }

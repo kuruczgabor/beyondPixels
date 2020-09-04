@@ -13,7 +13,6 @@ class PhotoIndex extends React.Component {
 
     render () {
         const { photos } = this.props;
-        // debugger
 
         return (
             <div>

@@ -12,18 +12,31 @@ class UserProfile extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
+        // debugger
         if (prevProps.userId !== this.props.userId) {
             this.props.fetchUser(this.props.userId)
         }
+
         // debugger
-        if (prevProps.followings) {
-            Object.values(prevProps.followings).forEach(following => {
-                // debugger
-                if (!following.follower_username) {
-                    this.props.fetchFollowings()
-                }
-            })
-        }
+        // if (this.props.followings !== prevProps.followings) {
+        //     this.props.fetchFollowings()
+        // }
+
+        // if (Object.values(this.props.followings).length !== Object.values(prevProps.followings).length) {
+        //     debugger
+        //     this.props.fetchFollowings()
+        // }
+
+        // this.props.fetchFollowings()
+        // debugger
+        // if (prevProps.followings) {
+        //     Object.values(prevProps.followings).forEach(following => {
+        //         // debugger
+        //         if (!following.follower_username) {
+        //             this.props.fetchFollowings()
+        //         }
+        //     })
+        // }
     }
 
     componentDidMount() {
@@ -41,6 +54,7 @@ class UserProfile extends React.Component {
                 followee_id: this.props.userId
             }
         }
+        // debugger
         this.props.createFollowing(following)
     }
 
@@ -134,15 +148,18 @@ class UserProfile extends React.Component {
                     <li>{numberOfPhotos} Photos</li>
                 </ul>
 
-                <div>
+                {this.props.followersListButton}
+                {this.props.followeesListButton}
+
+                {/* <div>
                     Followers:
                     <FollowingIndexContainer followings={this.props.followings} followers={followers} />
-                </div>
-
+                </div> */}
+{/* 
                 <div>
                     Followees:
                     <FollowingIndexContainer followings={this.props.followings} followees={followees} />
-                </div>
+                </div> */}
 
                 <div className="home-env">
                     <div className="home-env-inner">

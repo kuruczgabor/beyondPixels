@@ -9,6 +9,26 @@ class FollowingIndexItem extends React.Component {
         // this.handleFollow = this.handleFollow.bind(this)
     }
 
+    componentDidUpdate(prevProps) {
+
+        // if (this.props !== prevProps) {
+        //     this.props.fetchFollowings()
+        // }
+        // debugger
+        // if (this.props.followings !== prevProps.followings) {
+        //     this.props.fetchFollowings()
+        // }
+
+        // this.props.fetchFollowings()
+        // if (prevProps.followings) {
+        //     Object.values(prevProps.followings).forEach(following => {
+        //         if (!following.follower_username) {
+        //             this.props.fetchFollowings()
+        //         }
+        //     })
+        // }
+    }
+
     // handleFollow(e) {
     //     e.preventDefault();
     //     debugger
@@ -22,7 +42,7 @@ class FollowingIndexItem extends React.Component {
         const userName = this.props.followingUser.userName
 
         // let followButton;
-        let followButton = <button onClick={() => this.props.createFollowing({ following: { follower_id: that.props.currentUserId, followee_id: that.props.followingUser.userId } })}>FOLLOW</button>
+        let followButton = <button onClick={() => this.props.createFollowing({ following: { follower_id: that.props.currentUserId, followee_id: that.props.followingUser.userId } }).then(() => this.props.fetchFollowings())}>FOLLOW</button>
         const that = this
 
         Object.values(this.props.followings).forEach(following => {
@@ -31,6 +51,9 @@ class FollowingIndexItem extends React.Component {
             if (following.follower_id === that.props.currentUserId && following.followee_id === that.props.followingUser.userId) {
                 // debugger
                 followButton = <button onClick={() => this.props.deleteFollowing(following.id)}>UNFOLLOW</button>
+                // debugger
+                followButton = <button onClick={() => this.props.deleteFollowing(following.id).then( () => this.props.fetchFollowings())}>UNFOLLOW</button>
+
             } 
             
             // else if () {
