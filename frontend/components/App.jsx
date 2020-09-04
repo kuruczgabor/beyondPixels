@@ -31,13 +31,13 @@ const App = () => (
             
             {/* <Route path="/users/:userId" component={UserProfileContainer} /> */}
 
-            <AuthRoute exact path="/discover" component={DiscoverContainer} />
+            <Route exact path="/discover" component={DiscoverContainer} />
             
-            <AuthRoute exact path="/users/:userId" component={UserProfileContainer} />
+            <Route exact path="/users/:userId" component={UserProfileContainer} />
             <ProtectedRoute exact path="/home" component={HomeFeedContainer} />
             <ProtectedRoute exact path="/photos/new" component={UploadPhotoFormContainer} />
             <ProtectedRoute exact path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
-            <AuthRoute exact path="/photos/:photoId" component={PhotoShowContainer} />
+            <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
             
             <AuthRoute exact path="/" component={Splash} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
