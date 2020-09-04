@@ -49,10 +49,13 @@ class UserProfile extends React.Component {
         // const { user } = this.props;
         // if (!user) return null;
         // debugger
-        const userName = this.props.user ? this.props.user.username : null 
+        const userName = this.props.user ? this.props.user.username : null
+
+        let numberOfPhotos = 0;
 
         const photos = this.props.photos.map(photo => {
             if (this.props.user && photo.author_id === this.props.user.id) {
+                numberOfPhotos ++;
                 return <PhotoIndexItem key={photo.id} photo={photo} />
             }
         })
@@ -102,9 +105,6 @@ class UserProfile extends React.Component {
             })
         }
         
-
-        // debugger
-
         if (this.props.followings && this.props.currentUserId !== this.props.userId) {
             if (isAlreadyFollowing === false) {
                 followButton = <button onClick={this.handleFollow}>FOLLOW</button>
@@ -127,6 +127,7 @@ class UserProfile extends React.Component {
                 <ul>
                     <li>{followerNumber} Followers</li>
                     <li>{followeeNumber} Following</li>
+                    <li>{numberOfPhotos} Photos</li>
                 </ul>
 
                 <div>
