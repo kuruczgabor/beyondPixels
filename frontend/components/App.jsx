@@ -21,8 +21,10 @@ const App = () => (
     <div>
         <Modal />
         <header className="header" >
-            <Link to="/home"><h1>beyondPixels</h1></Link>
-            <Link to="/discover">Discover</Link>
+            <div className="header-links">
+                <Link to="/home"><h1>beyondPixels</h1></Link>
+                <Link to="/discover"><h2>Discover</h2></Link>
+            </div>
             <GreetingContainer />
         </header>
         <Switch>
