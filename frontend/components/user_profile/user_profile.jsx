@@ -104,6 +104,8 @@ class UserProfile extends React.Component {
                 }
             })
         }
+        // debugger
+
         
         if (this.props.followings && this.props.currentUserId !== this.props.userId) {
             if (isAlreadyFollowing === false) {
@@ -111,7 +113,9 @@ class UserProfile extends React.Component {
             } else {
                 followButton = <button onClick={() => this.props.deleteFollowing(currentFollowingId)}>UNFOLLOW</button>
             }
-        }
+        } 
+        
+        if (!this.props.currentUserId) followButton = null
         
         return (
             <div className="user-profile-env">

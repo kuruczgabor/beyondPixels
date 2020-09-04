@@ -31,11 +31,11 @@ const App = () => (
 
             <AuthRoute exact path="/discover" component={DiscoverContainer} />
             
-            <ProtectedRoute exact path="/users/:userId" component={UserProfileContainer} />
+            <AuthRoute exact path="/users/:userId" component={UserProfileContainer} />
             <ProtectedRoute exact path="/home" component={HomeFeedContainer} />
             <ProtectedRoute exact path="/photos/new" component={UploadPhotoFormContainer} />
             <ProtectedRoute exact path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
-            <ProtectedRoute exact path="/photos/:photoId" component={PhotoShowContainer} />
+            <AuthRoute exact path="/photos/:photoId" component={PhotoShowContainer} />
             
             <AuthRoute exact path="/" component={Splash} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />

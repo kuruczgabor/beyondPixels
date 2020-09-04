@@ -38,6 +38,7 @@ class FollowingIndexItem extends React.Component {
             // }
 
             if (that.props.followingUser.userId === this.props.currentUserId) followButton = null
+            if (!that.props.currentUserId) followButton = null
 
         })
         // debugger
