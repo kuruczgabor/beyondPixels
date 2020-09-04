@@ -81,13 +81,10 @@ class FollowingIndex extends React.Component {
         // if (followingUsers === null) return null
         
         return (
-            <div>
-                {/* hello */}
-                {/* {this.props.otherForm} */}
-                <ul>
+            <div className="following-modal">
+                <ul className="following-modal-list">
                     {
                         Object.entries(followingUsers).map(followingUser => {
-                            // debugger
                             return (
                                 <FollowingIndexItemContainer
                                     followingUser={followingUser[1]}

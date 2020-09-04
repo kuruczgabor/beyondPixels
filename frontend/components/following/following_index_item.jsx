@@ -42,7 +42,7 @@ class FollowingIndexItem extends React.Component {
         const userName = this.props.followingUser.userName
 
         // let followButton;
-        let followButton = <button onClick={() => this.props.createFollowing({ following: { follower_id: that.props.currentUserId, followee_id: that.props.followingUser.userId } }).then(() => this.props.fetchFollowings())}>FOLLOW</button>
+        let followButton = <button onClick={() => this.props.createFollowing({ following: { follower_id: that.props.currentUserId, followee_id: that.props.followingUser.userId } }).then(() => this.props.fetchFollowings())}>Follow</button>
         const that = this
 
         Object.values(this.props.followings).forEach(following => {
@@ -50,9 +50,9 @@ class FollowingIndexItem extends React.Component {
             // debugger
             if (following.follower_id === that.props.currentUserId && following.followee_id === that.props.followingUser.userId) {
                 // debugger
-                followButton = <button onClick={() => this.props.deleteFollowing(following.id)}>UNFOLLOW</button>
+                // followButton = <button onClick={() => this.props.deleteFollowing(following.id)}>Unfollow</button>
                 // debugger
-                followButton = <button onClick={() => this.props.deleteFollowing(following.id).then( () => this.props.fetchFollowings())}>UNFOLLOW</button>
+                followButton = <button onClick={() => this.props.deleteFollowing(following.id).then( () => this.props.fetchFollowings())}>Unfollow</button>
 
             } 
             
@@ -67,13 +67,9 @@ class FollowingIndexItem extends React.Component {
         // debugger
 
         return (
-            <li>
-                <div>
-                    <Link to={`/users/${this.props.followingUser.userId}`}>
-                        {userName}
-                    </Link>
-                    {followButton}
-                </div>
+            <li className="following-modal-item">
+                <Link className="following-modal-item-username" to={`/users/${this.props.followingUser.userId}`}>{userName}</Link>
+                {followButton}
             </li >
         )
     }
