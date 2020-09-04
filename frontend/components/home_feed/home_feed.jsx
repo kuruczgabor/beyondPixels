@@ -7,14 +7,35 @@ class HomeFeed extends React.Component {
     componentDidMount() {
         // debugger
         this.props.fetchPhotos();
+        this.props.fetchFollowings();
     }
 
     render() {
         // debugger
         if (!this.props.photos) return null;
 
+        
+        // debugger
+
+        let followedAuthorIds = [];
+        const that = this;
+
+        if (this.props.followings.followings) {
+            Object.values(this.props.followings.followings).forEach(following => {
+                // debugger
+                if (following.follower_id === that.props.currentUserId) {
+                    followedAuthorIds.push(following.followee_id) 
+                }
+            })
+        }
+
+
+        // debugger
         const photos = this.props.photos.map(photo => {
-            return <PhotoIndexItem key={photo.id} photo={photo} />
+            // debugger
+            if (followedAuthorIds.includes(photo.author_id)) {
+                return <PhotoIndexItem key={photo.id} photo={photo} />
+            }
         })
 
         // debugger
