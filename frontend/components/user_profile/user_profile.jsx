@@ -131,12 +131,12 @@ class UserProfile extends React.Component {
 
                 <div>
                     Followers:
-                    <FollowingIndexContainer followers={followers} />
+                    <FollowingIndexContainer followings={this.props.followings} followers={followers} />
                 </div>
 
                 <div>
                     Followees:
-                    <FollowingIndexContainer followees={followees} />
+                    <FollowingIndexContainer followings={this.props.followings} followees={followees} />
                 </div>
 
                 <div className="home-env">

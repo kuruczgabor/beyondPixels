@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
-import FollowingIndex from './following_index';
-import {createFollowing, deleteFollowing} from '../../actions/following_actions';
+import FollowingIndexItem from './following_index_item';
+import { createFollowing, deleteFollowing } from '../../actions/following_actions';
 
 const mapStateToProps = state => {
+    // debugger
     return {
-
+        currentUserId: state.session.id
     }
 }
 
@@ -16,4 +17,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FollowingIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(FollowingIndexItem);

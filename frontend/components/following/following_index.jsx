@@ -1,5 +1,5 @@
 import React from 'react';
-import FollowingIndexItem from './following_index_item';
+import FollowingIndexItemContainer from './following_index_item_container';
 
 class FollowingIndex extends React.Component {
 
@@ -11,7 +11,7 @@ class FollowingIndex extends React.Component {
         if (this.props.followers) followingUsers = this.props.followers;
         if (this.props.followees) followingUsers = this.props.followees;
 
-        // debugger
+        const followings = this.props.followings ? this.props.followings : null
         
         return (
             <ul>
@@ -19,9 +19,10 @@ class FollowingIndex extends React.Component {
                     Object.entries(followingUsers).map(followingUser => {
                         // debugger
                         return (
-                            <FollowingIndexItem
+                            <FollowingIndexItemContainer
                                 followingUser={followingUser[1]}
                                 key={followingUser[1].followingId}
+                                followings={followings}
                             />
                         )
                     })
