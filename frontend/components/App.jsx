@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, Link, Redirect } from 'react-router-dom';
 
-import GreetingContainer from './auth_header/auth_header_container';
+import AuthHeaderContainer from './auth_header/auth_header_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import UserProfileContainer from './user_profile/user_profile_container';
@@ -25,7 +25,7 @@ const App = () => (
                 <Link to="/home"><h1>beyondPixels</h1></Link>
                 <Link to="/discover"><h2>Discover</h2></Link>
             </div>
-            <GreetingContainer />
+            <AuthHeaderContainer />
         </header>
         <Switch>
             

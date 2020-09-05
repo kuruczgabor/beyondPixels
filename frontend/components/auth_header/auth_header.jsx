@@ -1,57 +1,78 @@
 import React, { isValidElement } from 'react';
 import { Link } from 'react-router-dom';
 
-const AuthHeader = ({ currentUser, logout }) => {
+class AuthHeader extends React.Component {
 
-    const sessionLinks = () => (
-        <nav className="auth-header">
-            <ul>   
-                {/* <Link to="/"><li>Demo</li></Link> */}
-                <Link to="/login"><li>Log in</li></Link>
-                <Link to="/signup" id="header-signup-button"><li>Sign up</li></Link>
-            </ul>
-        </nav>
-    );
+    constructor(props) {
+        super(props)
+    }
 
-    const signedInHeader = () => (
+    componentDidMount() {
 
-        <nav className="signed-in-header" >
+        const trigger = document.getElementById('profile-dropdown-trigger');
+        const dropdown = document.getElementById('profile-dropdown');
 
-            <div id="profile-dropdown-trigger" onClick={revealDropdown}>
-                <div >
-                    <i className="fas fa-user"></i>
-                </div>
-                <ul id="profile-dropdown">
-                    <Link to={`/users/${currentUser.id}`}><li>Profile</li></Link>
-                    <li>FakeLink2</li>
-                    <li>FakeLink3</li>
-                    <button onClick={logout} className="header-logout-button" ><li>Log Out</li></button>
+        if (dropdown) {
+            document.addEventListener("click", function () {
+                dropdown.classList.remove('reveal')
+            }, false);
+        }
+
+        if (trigger) {
+            trigger.addEventListener("click", function (e) {
+                dropdown.classList.add('reveal')
+                e.stopPropagation();
+            }, false);
+        }
+
+    }
+
+    componentDidUpdate(prevProps) {
+        const dropdown = document.getElementById('profile-dropdown')
+        if (dropdown) {
+            dropdown.classList.remove('reveal')
+        }
+    }
+
+    render() {
+
+        const sessionLinks = !this.props.currentUser ? (
+            <nav className="auth-header">
+                <ul>
+                    <Link to="/login"><li>Log in</li></Link>
+                    <Link to="/signup" id="header-signup-button"><li>Sign up</li></Link>
                 </ul>
+            </nav>
+        ) : null
+
+        const signedInHeader = this.props.currentUser && this.props.logout ? (
+
+            <nav className="signed-in-header" >
+
+                <div id="profile-dropdown-trigger">
+
+                    <div >
+                        <i className="fas fa-user"></i>
+                    </div>
+                    <ul id="profile-dropdown">
+                        <Link to={`/users/${this.props.currentUser.id}`}><li>Profile</li></Link>
+                        <button onClick={() => this.props.logout()} className="header-logout-button" ><li>Log Out</li></button>
+                    </ul>
+                </div>
+
+                <Link to="/photos/new" id="header-upload-button"><li><i className="fas fa-arrow-up"></i>  Upload</li></Link>
+
+            </nav>
+        ) : null
+
+        return (
+            <div>
+                {signedInHeader}
+                {sessionLinks}
             </div>
+        )
 
-            <Link to="/photos/new" id="header-upload-button"><li><i className="fas fa-arrow-up"></i>  Upload</li></Link>
-
-        </nav>
-    )
-
-    // const revealDropdown = () => {
-    //     $('#profile-dropdown').toggleClass('reveal')
-    // }
-
-    const revealDropdown = () => {
-        $(document.body)
-        $('#profile-dropdown').addClass('reveal');
-        $('#profile-dropdown-trigger').off('click', revealDropdown);
-        $(document).on('click', hideDropdown);
-    };
-
-    const hideDropdown = () => {
-        $('#profile-dropdown').removeClass('reveal');
-        $('#profile-dropdown-trigger').on('click', revealDropdown);
-        $(document).off('click', hideDropdown);
-    };
-
-    return currentUser ? signedInHeader() : sessionLinks();
+    }
 
 };
 
