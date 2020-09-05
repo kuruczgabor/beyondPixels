@@ -48,8 +48,6 @@ class HomeFeed extends React.Component {
                         </ul>
                     </div>
                 </div>
-
-
             </div>
         )
     }

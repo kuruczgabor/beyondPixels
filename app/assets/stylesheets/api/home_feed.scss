@@ -22,6 +22,12 @@
     object-fit: contain;
     max-height: fit-content;
     margin-bottom: 15px;
+    // box-shadow: inset 2px 2px 2px 2px black;    
+    // z-index: 5;
+}
+
+.home-photos-list li {
+    position: relative;
 }
 
 .home-page-photos {
@@ -31,4 +37,24 @@
     padding-top: 20px;
     //   margin-left: 55px;
     margin-left: 70px;
-    }
+}
+
+.post-index-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
+    font-weight: lighter;
+    opacity: 0%;
+}
+
+.post-index-item:hover + .post-index-title {
+    animation: photoTitleFadeIn ease 0.3s ;
+    opacity: 100%;
+}
+
+// @keyframes photoTitleFadeIn {
+//   from {opacity: 0;}
+//   to {opacity:1 ;}
+// }
