@@ -1,5 +1,5 @@
 # beyondPixels
-[beyondPixels](http://beyondpixels.herokuapp.com/), a 500px clone, is an application that allows amateur and professional photographers to share their world through their own lenses.
+[beyondPixels](https://beyondpixels.herokuapp.com/), a 500px clone, is an application that allows amateur and professional photographers to share their world through their own lenses.
 
 ## Features
 * Users can sign up, log in, log out or just simply use the demo login option
