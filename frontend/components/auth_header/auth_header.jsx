@@ -117,7 +117,7 @@ class AuthHeader extends React.Component {
                     <ul id="profile-dropdown">
                         <Link to={`/users/${this.props.currentUserId}`}><li>Profile</li></Link>
                         {/* <button onClick={() => this.props.logout()} className="header-logout-button" ><li>Log Out</li></button> */}
-                        <Link to={'/'} onClick={() => this.props.logout()} className="header-logout-button" ><li>Log Out</li></Link>
+                        <Link to={'/'} onClick={() => this.props.logout()} className="header-logout-button" ><li>Log out</li></Link>
 
                     </ul>
                 </div>
