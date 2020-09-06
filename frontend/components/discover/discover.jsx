@@ -34,6 +34,8 @@ class Discover extends React.Component {
 
         return (
             <div className="home-env">
+                <h2>Discover</h2>
+                <p>Explore the highest quality of photography.</p>
                 <div className="home-env-inner">
                     <div className="home-page-photos">
                         <ul className="home-photos-list">

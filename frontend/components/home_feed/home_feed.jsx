@@ -43,7 +43,7 @@ class HomeFeed extends React.Component {
             <>
                 <div className="home-env">
                     <h2>Home Feed</h2>
-                    <p>See photos and published Galleries from people you follow.</p>
+                    <p>See photos from people you follow.</p>
                     <div className="home-env-inner">
                         <div className="home-page-photos">
                             <ul className="home-photos-list">

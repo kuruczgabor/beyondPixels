@@ -40,7 +40,7 @@ class AuthHeader extends React.Component {
             // debugger
             if (!e.target.matches('#profile-dropdown-trigger-icon')) {
                 let dropdown = document.getElementById('profile-dropdown');
-                if (dropdown.classList.contains('reveal')) {
+                if (dropdown && dropdown.classList.contains('reveal')) {
                     dropdown.classList.remove('reveal')
                 }
             }
@@ -50,16 +50,35 @@ class AuthHeader extends React.Component {
 
     componentDidUpdate(prevProps) {
 
+        // debugger
+        const trigger = document.getElementById('profile-dropdown-trigger');
         const dropdown = document.getElementById('profile-dropdown')
+
         if (dropdown) {
             dropdown.classList.remove('reveal')
         }
+
+        if (trigger) {
+            trigger.addEventListener('click', () => {
+                dropdown.classList.toggle('reveal')
+            })
+        }
+
+        window.addEventListener('click', (e) => {
+            // debugger
+            if (!e.target.matches('#profile-dropdown-trigger-icon')) {
+                let dropdown = document.getElementById('profile-dropdown');
+                if (dropdown && dropdown.classList.contains('reveal')) {
+                    dropdown.classList.remove('reveal')
+                }
+            }
+        })
 
     }
 
     render() {
 
-        const sessionLinks = !this.props.currentUser ? (
+        const sessionLinks = !this.props.currentUserId ? (
             <nav className="auth-header">
                 <ul>
                     <Link to="/login"><li>Log in</li></Link>
@@ -68,7 +87,7 @@ class AuthHeader extends React.Component {
             </nav>
         ) : null
 
-        const signedInHeader = this.props.currentUser && this.props.logout ? (
+        const signedInHeader = this.props.currentUserId && this.props.logout ? (
 
             <nav className="signed-in-header" >
 
@@ -78,7 +97,7 @@ class AuthHeader extends React.Component {
                         <i id="profile-dropdown-trigger-icon" className="fas fa-user"></i>
                     </div>
                     <ul id="profile-dropdown">
-                        <Link to={`/users/${this.props.currentUser.id}`}><li>Profile</li></Link>
+                        <Link to={`/users/${this.props.currentUserId}`}><li>Profile</li></Link>
                         <button onClick={() => this.props.logout()} className="header-logout-button" ><li>Log Out</li></button>
                     </ul>
                 </div>
