@@ -1,10 +1,14 @@
 # beyondPixels
 [beyondPixels](https://beyondpixels.herokuapp.com/), a 500px clone, is an application that allows amateur and professional photographers to share their world through their own lenses.
 
+<p align="center">
+  <img height="400" src="/app/assets/images/home_feed.png">
+</p>
+
 # Technologies
-* JavaScript
 * React
 * Redux
+* JavaScript
 * HTML
 * CSS
 * Ruby on Rails
@@ -34,7 +38,7 @@
 # Upcoming features:
 
 * Likes
-    - Users can like photos
+    - Users can like and unlike photos
 * Comments
     - Users can comment photos
 * Tags
