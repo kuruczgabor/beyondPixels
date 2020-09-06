@@ -65,7 +65,6 @@ class PhotoForm extends React.Component {
         this.props.formType === "Edit" ? formData.append('id', this.state.id) : null
 
         this.props.formType === 'Upload' ? this.props.uploadPhoto(formData) : this.props.updatePhoto(formData)
-        debugger
         this.props.history.push(`/users/${this.props.currentUserId}`)
         
     };
@@ -129,7 +128,7 @@ class PhotoForm extends React.Component {
             return (
                 // <input id="photo-delete-button" type="submit" value="Delete Photo"  />
                 
-                <input id="photo-delete-button" value="Delete Photo" onClick={() => this.props.deletePhoto(this.props.photo.id)} type="button"/>
+                <input id="photo-delete-button" value="Delete Photo" onClick={() => this.props.deletePhoto(this.props.photo.id).then( () => this.props.history.push(`/users/${this.props.currentUserId}`))} type="button"/>
                 // <button id="photo-delete-button" value="Delete Photo" onClick={() => this.props.deletePhoto(this.props.photo.id)} />
 
                 // <input id="photo-delete-button" onClick={() => this.props.deletePhoto(this.props.photo.id)}>Delete Photo</input>

@@ -23,7 +23,6 @@ class Api::PhotosController < ApplicationController
     # end
 
     def create
-        # debugger
         if photo_params[:photo_file] != 'null'
             @photo = Photo.new(photo_params)
             if @photo.save
@@ -48,7 +47,6 @@ class Api::PhotosController < ApplicationController
     end
 
     def update
-        # debugger
         @photo = Photo.find(params[:id])
         if @photo.update(params.require(:photo).permit(:title, :description)) 
             render :show
@@ -61,7 +59,6 @@ class Api::PhotosController < ApplicationController
     private
 
     def photo_params
-        # debugger
         params.require(:photo).permit(:title, :description, :author_id, :photo_file)
     end
 

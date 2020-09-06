@@ -13,7 +13,6 @@ export const receivePhotos = photos => ({
 });
 
 export const receivePhoto = photo => {
-    // debugger
     return {
         type: RECEIVE_PHOTO,
         photo
@@ -28,7 +27,6 @@ export const removePhoto = photoId => {
 }
 
 export const receivePhotoErrors = errors => {
-    // debugger
     return {
         type: RECEIVE_PHOTO_ERRORS,
         errors
@@ -53,7 +51,6 @@ export const fetchPhoto = photoId => dispatch => (
 );
 
 export const createPhoto = photo => dispatch => {
-    // debugger
     return APIUtil.createPhoto(photo).then(
         photo => dispatch(receivePhoto(photo)),
         err => dispatch(receivePhotoErrors(err.responseJSON))
@@ -68,7 +65,6 @@ export const deletePhoto = photoId => dispatch => {
 };
 
 export const updatePhoto = photo => dispatch => {
-    // debugger
     return APIUtil.updatePhoto(photo).then(
         photo => dispatch(receivePhoto(photo)),
         err => dispatch(receivePhotoErrors(err.responseJSON))

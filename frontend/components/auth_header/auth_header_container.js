@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import AuthHeader from './auth_header';
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+const mapStateToProps = ( state, ownProps ) => {
     // debugger
     return {
-        currentUser: users[session.id],
-        currentUserId: session.id
+        currentUser: state.entities.users[state.session.id],
+        currentUserId: state.session.id
+        // currentUser: users[session.id],
+        // currentUserId: session.id
     };
 };
 

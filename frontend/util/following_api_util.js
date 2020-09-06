@@ -7,7 +7,6 @@ export const fetchFollowings = () => {
 }
 
 export const createFollowing = (formData) => {
-    // debugger
     return $.ajax({
         url: 'api/followings',
         method: 'POST',
@@ -18,7 +17,6 @@ export const createFollowing = (formData) => {
 }
 
 export const deleteFollowing = (followingId) => {
-    // debugger
     return $.ajax({
         url: `api/followings/${followingId}`,
         method: 'DELETE'
