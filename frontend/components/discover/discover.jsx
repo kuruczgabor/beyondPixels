@@ -7,10 +7,28 @@ class Discover extends React.Component {
         this.props.fetchPhotos();
     }
 
+    shufflePhotos(photos) {
+        let currentIndex = photos.length, temporaryValue, randomIndex;
+
+        while (0 !== currentIndex) {
+
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            temporaryValue = photos[currentIndex];
+            photos[currentIndex] = photos[randomIndex];
+            photos[randomIndex] = temporaryValue;
+        }
+
+        return photos;
+    }
+
     render() {
         if (!this.props.photos) return null;
 
-        const photos = this.props.photos.map(photo => {
+        const shuffledPhotos = this.shufflePhotos(this.props.photos)
+
+        const photos = shuffledPhotos.map(photo => {
             return <PhotoIndexItem key={photo.id} photo={photo} />
         })
 
