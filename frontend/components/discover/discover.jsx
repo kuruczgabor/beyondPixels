@@ -32,7 +32,6 @@ class Discover extends React.Component {
             return <PhotoIndexItem key={photo.id} photo={photo} />
         })
 
-        // debugger
         return (
             <div className="home-env">
                 <div className="home-env-inner">
