@@ -12,26 +12,49 @@ class AuthHeader extends React.Component {
         const trigger = document.getElementById('profile-dropdown-trigger');
         const dropdown = document.getElementById('profile-dropdown');
 
-        if (dropdown) {
-            document.addEventListener("click", function () {
-                dropdown.classList.remove('reveal')
-            }, false);
-        }
+        // // if (dropdown) {
+        // //     document.addEventListener("click", function () {
+        // //         debugger
+        // //         dropdown.classList.remove('reveal')
+        // //     }, false);
+        // // }
+
+        // if (trigger) {
+        //     trigger.addEventListener("click", function (e) {
+        //         dropdown.classList.add('reveal')
+
+        //         document.addEventListener("click", function () {
+        //             dropdown.classList.remove('reveal')
+        //         }, false);
+        //         e.stopPropagation();
+        //     }, false);
+        // }
 
         if (trigger) {
-            trigger.addEventListener("click", function (e) {
-                dropdown.classList.add('reveal')
-                e.stopPropagation();
-            }, false);
+            trigger.addEventListener('click', () => {
+                dropdown.classList.toggle('reveal')
+            })
         }
+
+        window.addEventListener('click', (e) => {
+            // debugger
+            if (!e.target.matches('#profile-dropdown-trigger-icon')) {
+                let dropdown = document.getElementById('profile-dropdown');
+                if (dropdown.classList.contains('reveal')) {
+                    dropdown.classList.remove('reveal')
+                }
+            }
+        })
 
     }
 
     componentDidUpdate(prevProps) {
+
         const dropdown = document.getElementById('profile-dropdown')
         if (dropdown) {
             dropdown.classList.remove('reveal')
         }
+
     }
 
     render() {
@@ -52,7 +75,7 @@ class AuthHeader extends React.Component {
                 <div id="profile-dropdown-trigger">
 
                     <div >
-                        <i className="fas fa-user"></i>
+                        <i id="profile-dropdown-trigger-icon" className="fas fa-user"></i>
                     </div>
                     <ul id="profile-dropdown">
                         <Link to={`/users/${this.props.currentUser.id}`}><li>Profile</li></Link>
