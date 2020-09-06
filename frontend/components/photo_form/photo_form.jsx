@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class PhotoForm extends React.Component {
 
@@ -19,7 +20,27 @@ class PhotoForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
     };
 
+    // componentDidMount() {
+    //     document.addEventListener("DOMContentLoaded", function () {
+    //         let titleInput = document.getElementById("photo_upload_title_input");
+    //         titleInput.oninvalid = (e) => {
+    //             e.target.setCustomValidity("");
+    //             if (!e.target.validity.valid) {
+    //                 e.target.setCustomValidity("This field cannot be left blank");
+    //             }
+    //         };
+    //         titleInput.oninput = (e) => {
+    //             e.target.setCustomValidity("");
+    //         };
+    //     })
+    // }
+
+    componentDidMount() {
+        this.props.resetPhotoErrors();
+    }
+
     handleFile(e) {
+        this.props.resetPhotoErrors();
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
@@ -31,6 +52,7 @@ class PhotoForm extends React.Component {
     };
 
     handleSubmit(e) {
+
         e.preventDefault();
         const formData = new FormData();
         
@@ -43,7 +65,9 @@ class PhotoForm extends React.Component {
         this.props.formType === "Edit" ? formData.append('id', this.state.id) : null
 
         this.props.formType === 'Upload' ? this.props.uploadPhoto(formData) : this.props.updatePhoto(formData)
-        ;
+        debugger
+        this.props.history.push(`/users/${this.props.currentUserId}`)
+        
     };
 
 
@@ -59,6 +83,7 @@ class PhotoForm extends React.Component {
 
     update(field){
         // debugger
+        // this.props.resetPhotoErrors();
         return e => this.setState({[field]: e.target.value});
     };
 
@@ -112,6 +137,19 @@ class PhotoForm extends React.Component {
         }             
     }
 
+    renderErrors() {
+        // debugger
+        return this.props.errors.length > 0 ? (
+            <div className="error-popup">
+                <ul>
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error-${i}`}>{error}</li>
+                    ))}
+                </ul>
+            </div>
+        ) : null
+    }
+
     render() {
         // debugger
         if (!this.props.photo) {
@@ -124,6 +162,8 @@ class PhotoForm extends React.Component {
 
         return (
             <div className="photo-form-main">
+
+                {this.renderErrors()}
                 {/* <h2 className="photo-form-title">Upload</h2> */}
                 {this.titleChooser()}
 
@@ -149,7 +189,7 @@ class PhotoForm extends React.Component {
 
                             <label>Title*
                                 <br/>
-                                <input type="text" value={this.state.title} onChange={this.update('title')} />
+                                <input id="photo_upload_title_input" type="text" value={this.state.title} onChange={this.update('title')} required/>
                             </label>
 
                             <label>Description

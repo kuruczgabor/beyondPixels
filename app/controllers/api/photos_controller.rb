@@ -10,15 +10,31 @@ class Api::PhotosController < ApplicationController
         render :index
     end
 
+    # def create
+    #     debugger
+    #     @photo = Photo.new(photo_params)
+    #     debugger
+    #     if @photo.save
+    #         render :show
+    #     else
+    #         debugger
+    #         render json: @photo.errors.full_messages, status: 422
+    #     end
+    # end
+
     def create
-        debugger
-        @photo = Photo.new(photo_params)
-        debugger
-        if @photo.save
-            render :show
+        # debugger
+        if photo_params[:photo_file] != 'null'
+            @photo = Photo.new(photo_params)
+            if @photo.save
+                render :show
+            else
+                render @photo.errors.full_messages, status: 422
+            end
         else
-            render json: @user.errors.full_messages, status: 422
+            render json: ["Please choose a file"], status: 422
         end
+
     end
 
     def destroy
@@ -35,7 +51,7 @@ class Api::PhotosController < ApplicationController
         # debugger
         @photo = Photo.find(params[:id])
         if @photo.update(params.require(:photo).permit(:title, :description)) 
-            render @show
+            render :show
         else
             render json: @photo.errors.full_messages, status: 422
         end
@@ -45,7 +61,7 @@ class Api::PhotosController < ApplicationController
     private
 
     def photo_params
-        debugger
+        # debugger
         params.require(:photo).permit(:title, :description, :author_id, :photo_file)
     end
 

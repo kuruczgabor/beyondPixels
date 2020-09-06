@@ -3,6 +3,8 @@ import * as APIUtil from '../util/photo_api_util';
 export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const REMOVE_PHOTO = 'REMOVE_PHOTO';
+export const RECEIVE_PHOTO_ERRORS = 'RECEIVE_PHOTO_ERRORS';
+export const RECEIVE_RESET_PHOTO_ERRORS = 'RECEIVE_RESET_PHOTO_ERRORS';
 
 
 export const receivePhotos = photos => ({
@@ -25,6 +27,18 @@ export const removePhoto = photoId => {
     }
 }
 
+export const receivePhotoErrors = errors => {
+    // debugger
+    return {
+        type: RECEIVE_PHOTO_ERRORS,
+        errors
+    }
+}
+
+export const resetPhotoErrors = () => ({
+    type: RECEIVE_RESET_PHOTO_ERRORS
+})
+
 
 export const fetchPhotos = () => dispatch => (
     APIUtil.fetchPhotos().then(
@@ -41,19 +55,22 @@ export const fetchPhoto = photoId => dispatch => (
 export const createPhoto = photo => dispatch => {
     // debugger
     return APIUtil.createPhoto(photo).then(
-        photo => dispatch(receivePhoto(photo))
+        photo => dispatch(receivePhoto(photo)),
+        err => dispatch(receivePhotoErrors(err.responseJSON))
     )
 };
 
 export const deletePhoto = photoId => dispatch => {
     return APIUtil.deletePhoto(photoId).then(
-        () => dispatch(removePhoto(photoId))
+        () => dispatch(removePhoto(photoId)),
+        err => dispatch(receivePhotoErrors(err.responseJSON))
     )
 };
 
 export const updatePhoto = photo => dispatch => {
     // debugger
     return APIUtil.updatePhoto(photo).then(
-        photo => dispatch(receivePhoto(photo))
+        photo => dispatch(receivePhoto(photo)),
+        err => dispatch(receivePhotoErrors(err.responseJSON))
     )
 };
