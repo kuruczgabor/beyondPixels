@@ -2,7 +2,7 @@
 [beyondPixels](https://beyondpixels.herokuapp.com/), a 500px clone, is a web application that allows amateur and professional photographers to share their world through their own lenses.
 
 <p align="center">
-  <img height="400" src="/app/assets/images/home_feed.png">
+  <img height="500" src="/app/assets/images/home_feed.png">
 </p>
 
 # Technologies
@@ -89,7 +89,7 @@ return (
 I use the same PhotoForm when uploading or editing photos with some modifications based on the formType.
 
 <p align="center">
-  <img height="300" src="/app/assets/images/upload.gif">
+  <img height="500" src="/app/assets/images/upload.gif">
 </p>
 
 
@@ -180,7 +180,7 @@ Upon failure, the errors are ready to show up and notify the user.
 Users can dynamically follow and unfollow other users without refreshing the page.
 
 <p align="center">
-  <img height="300" src="/app/assets/images/follow.gif">
+  <img height="500" src="/app/assets/images/follow.gif">
 </p>
 
 ##### FollowingIndexItem Class:
