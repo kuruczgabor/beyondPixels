@@ -37,8 +37,9 @@
 
 ### Dynamic Photo Grid
 
-The size of the photo grid dynamically changes based on the window size.
+The size of the photos and the photo grid dynamically changes based on the window size.
 
+##### Rendering Home Page:
 ```javaScript
 return (
     <div className="home-env">
@@ -54,6 +55,8 @@ return (
     </div>
 )
 ```
+
+##### Styling Photo Grid:
 
 ```CSS
 .home-env {
@@ -89,6 +92,8 @@ I use the same PhotoForm when uploading or editing photos with some modification
   <img height="300" src="/app/assets/images/upload.gif">
 </p>
 
+
+##### Rendering PhotoForm:
 ```javaScript
 render() {
         
@@ -154,6 +159,7 @@ Upon failure, the errors are ready to show up and notify the user.
   <img height="50" src="/app/assets/images/error.gif">
 </p>
 
+##### Handling Errors:
 ```javaScript
     renderErrors() {
         return this.props.errors.length > 0 ? (
@@ -177,6 +183,7 @@ Users can dynamically follow and unfollow other users without refreshing the pag
   <img height="300" src="/app/assets/images/follow.gif">
 </p>
 
+##### FollowingIndexItem Class:
 ```javaScript
 class FollowingIndexItem extends React.Component {
 
