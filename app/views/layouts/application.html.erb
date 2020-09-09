@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta property="og:image" content="preview.png" />
-    <meta property="og:description" content="beyondPixels, a 500px clone, is a web application that allows amateur and professional photographers to share their world through their own lenses." />
-    <meta property="og:url" content="https://beyondpixels.herokuapp.com/#/" />
-    <meta property="og:title" content="beyondPixels" />
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
 
     <title>beyondPixels</title>
     <%= csrf_meta_tags %>
