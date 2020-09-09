@@ -7,7 +7,6 @@ import { deletePhoto } from '../../util/photo_api_util';
 import { resetPhotoErrors } from '../../actions/photo_actions'
 
 const mapStateToProps = state => {
-    // debugger
     return {
         currentUserId: state.session.id,
         formType: 'Upload',
@@ -22,7 +21,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    // debugger
     return {
         uploadPhoto: photo => dispatch(createPhoto(photo)),
         resetPhotoErrors: () => dispatch(resetPhotoErrors())

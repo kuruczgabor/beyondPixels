@@ -11,8 +11,6 @@ export const createFollowing = (formData) => {
         url: 'api/followings',
         method: 'POST',
         data: formData,
-        // contentType: false,
-        // processData: false
     })
 }
 

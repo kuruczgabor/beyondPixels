@@ -7,7 +7,6 @@ import { fetchFollowings, createFollowing, deleteFollowing } from '../../actions
 import { openModal, closeModal} from '../../actions/modal_actions'
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         currentUserId: state.session.id,
         userId: parseInt(ownProps.match.params.userId),

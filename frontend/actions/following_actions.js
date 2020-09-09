@@ -4,6 +4,8 @@ export const RECEIVE_FOLLOWINGS = 'RECEIVE_FOLLOWINGS';
 export const RECEIVE_FOLLOWING = 'RECEIVE_FOLLOWING';
 export const REMOVE_FOLLOWING = 'REMOVE_FOLLOWING';
 
+
+
 export const receiveFollowings = followings => ({
     type: RECEIVE_FOLLOWINGS,
     followings
@@ -18,6 +20,8 @@ export const removeFollowing = followingId => ({
     type: REMOVE_FOLLOWING,
     followingId
 });
+
+
 
 export const fetchFollowings = () => dispatch => (
     APIUtil.fetchFollowings().then(

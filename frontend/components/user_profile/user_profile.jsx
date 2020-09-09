@@ -12,35 +12,12 @@ class UserProfile extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        // debugger
         if (prevProps.userId !== this.props.userId) {
             this.props.fetchUser(this.props.userId)
         }
-
-        // debugger
-        // if (this.props.followings !== prevProps.followings) {
-        //     this.props.fetchFollowings()
-        // }
-
-        // if (Object.values(this.props.followings).length !== Object.values(prevProps.followings).length) {
-        //     debugger
-        //     this.props.fetchFollowings()
-        // }
-
-        // this.props.fetchFollowings()
-        // debugger
-        // if (prevProps.followings) {
-        //     Object.values(prevProps.followings).forEach(following => {
-        //         // debugger
-        //         if (!following.follower_username) {
-        //             this.props.fetchFollowings()
-        //         }
-        //     })
-        // }
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchUser(this.props.userId)
         this.props.fetchPhotos();
         this.props.fetchFollowings();
@@ -54,15 +31,10 @@ class UserProfile extends React.Component {
                 followee_id: this.props.userId
             }
         }
-        // debugger
         this.props.createFollowing(following)
     }
 
     render () {
-        // debugger
-        // const { user } = this.props;
-        // if (!user) return null;
-        // debugger
         const userName = this.props.user ? this.props.user.username : null
 
         let numberOfPhotos = 0;
@@ -84,21 +56,15 @@ class UserProfile extends React.Component {
         let currentFollowingId;
         let that = this;
 
-        // if (!this.props.followings) return null
         if (this.props.followings) {
             Object.entries(this.props.followings).forEach((following) => {
-                // debugger
-                if (following[1]["follower_id"] === this.props.currentUserId && following[1]["followee_id"] === this.props.userId) {
+                if (following[1]["follower_id"] === this.props.currentUserId && 
+                    following[1]["followee_id"] === this.props.userId) {
                     isAlreadyFollowing = true
                     currentFollowingId = parseInt(following[0])
                 }
-                // if (following[1]["follower_id"] === this.props.userId) followeeNumber++
-                // if (following[1]["followee_id"] === this.props.userId) followerNumber++
-                // debugger
                 if (following[1]["follower_id"] === that.props.userId) {
-                    // debugger
                     followeeNumber++
-                    // followees[following[1]["followee_id"]] = following[1]
                     followees[following[0]] = {
                         followingId: following[1].id,
                         userId: following[1].followee_id,
@@ -107,9 +73,7 @@ class UserProfile extends React.Component {
                 }
 
                 if (following[1]["followee_id"] === that.props.userId) {
-                    // debugger
                     followerNumber++
-                    // followers[following[1]["follower_id"]] = following[1]
                     followers[following[0]] = {
                         followingId: following[1].id,
                         userId: following[1].follower_id,
@@ -118,8 +82,6 @@ class UserProfile extends React.Component {
                 }
             })
         }
-        // debugger
-
         
         if (this.props.followings && this.props.currentUserId !== this.props.userId) {
             if (isAlreadyFollowing === false) {
@@ -143,29 +105,6 @@ class UserProfile extends React.Component {
                         <li>{numberOfPhotos} Photos</li>
                     </ul>
                 </div> 
-{/* 
-                <div>
-                    {followButton}
-                </div> */}
-
-                {/* <ul>
-                    <li>{followerNumber} {this.props.followersListButton}</li>
-                    <li>{followeeNumber} {this.props.followeesListButton}</li>
-                    <li>{numberOfPhotos} Photos</li>
-                </ul> */}
-
-                {/* {this.props.followersListButton}
-                {this.props.followeesListButton} */}
-
-                {/* <div>
-                    Followers:
-                    <FollowingIndexContainer followings={this.props.followings} followers={followers} />
-                </div> */}
-{/* 
-                <div>
-                    Followees:
-                    <FollowingIndexContainer followings={this.props.followings} followees={followees} />
-                </div> */}
 
                 <div className="home-env">
                     <div className="home-env-inner">

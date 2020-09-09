@@ -68,7 +68,6 @@ class SessionForm extends React.Component {
     }
 
     errorPopUp() {
-        // debugger
         if (this && this.props.formType === "Log in" && this.props.errors.length > 0) {
             return (
                 <div className='error-popup'>
@@ -99,15 +98,8 @@ class SessionForm extends React.Component {
     componentDidMount() {
         this.props.resetErrors();
     }
-
-
     
     render() {
-
-        // const renderErrors = this.renderErrors();
-        // const errors = this.errors;
-        // debugger
-
 
         return (
 
@@ -122,8 +114,6 @@ class SessionForm extends React.Component {
                     {this.sessionFormTopChooser()}
 
                     <form onSubmit={this.handleSubmit} className="session-form">
-
-
 
                         <label>Username
                         <input type="text"
@@ -147,9 +137,7 @@ class SessionForm extends React.Component {
                             {this.errorUnderPasswordInput()}
                         </div>
 
-                        {/* <input type="submit" value={this.props.formType} onClick={() => setTimeout(this.errorPopUp(), 3000)} /> */}
                         <input type="submit" value={this.props.formType} onClick={this.errorPopUp} />
-
 
                         <input type="submit" value="Demo Login" onClick={this.demoLogin} />
 

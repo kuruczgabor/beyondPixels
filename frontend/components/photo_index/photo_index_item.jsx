@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 
 const PhotoIndexItem = props => {
-    // debugger
     return (
         <li>
             <Link className="post-index-item" to={`/photos/${props.photo.id}`}>

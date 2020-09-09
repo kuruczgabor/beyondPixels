@@ -7,6 +7,7 @@ export const RECEIVE_PHOTO_ERRORS = 'RECEIVE_PHOTO_ERRORS';
 export const RECEIVE_RESET_PHOTO_ERRORS = 'RECEIVE_RESET_PHOTO_ERRORS';
 
 
+
 export const receivePhotos = photos => ({
     type: RECEIVE_PHOTOS,
     photos
@@ -36,6 +37,7 @@ export const receivePhotoErrors = errors => {
 export const resetPhotoErrors = () => ({
     type: RECEIVE_RESET_PHOTO_ERRORS
 })
+
 
 
 export const fetchPhotos = () => dispatch => (

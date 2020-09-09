@@ -4,10 +4,7 @@ import { fetchPhotos } from '../../actions/photo_actions';
 import { fetchFollowings } from '../../actions/following_actions';
 import HomeFeed from './home_feed';
 
-
-
 const mapStateToProps = state => {
-    // debugger
     return {
         photos: Object.values(state.entities.photos),
         followings: state.entities.followings,
@@ -16,7 +13,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    // debugger
     return ({
         fetchPhotos: () => dispatch(fetchPhotos()),
         fetchFollowings: () => dispatch(fetchFollowings())

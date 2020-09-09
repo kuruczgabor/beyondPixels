@@ -9,8 +9,7 @@ class PhotoShow extends React.Component {
             .then(res => {
                 const authorId = res.photo.author_id
                 this.props.fetchUser(authorId)
-            }
-            )
+            })
     }
 
     componentDidUpdate(prevProps) {
@@ -21,27 +20,14 @@ class PhotoShow extends React.Component {
 
     render() {
         if (!this.props.photo) return null;
-        // if (!this.props.photoAuthor) return null;
 
         const { title, description, photoUrl, created_at } = this.props.photo;
-
-        // debugger
         const createdAt = created_at.slice(0, 10).split('-')
         const formattedCreatedAt = createdAt[1] + '/' + createdAt[2] + '/' + createdAt[0]
-        // debugger
-
         const photoAuthor = this.props.users[this.props.photo.author_id] ? this.props.users[this.props.photo.author_id].username : null
         const photoAuthorId = this.props.users[this.props.photo.author_id] ? this.props.users[this.props.photo.author_id].id : null
-
-        // const photoAuthor = this.props.photoAuthor ? this.props.photoAuthor.username : null
-
-
-        // debugger
         const editPhotoButton = this.props.users[this.props.photo.author_id] && this.props.users[this.props.photo.author_id].id === this.props.currentUserId ? (
-            // <div className="photo-show-edit-button">
-            // <Link className="photo-show-edit-button" to={`/#/photos/${this.props.photo.id}/edit`}>EDIT</Link>
-                <a className="photo-show-edit-button" href={`/#/photos/${this.props.photo.id}/edit`}>Edit Photo</a>
-            /* </div> */
+            <a className="photo-show-edit-button" href={`/#/photos/${this.props.photo.id}/edit`}>Edit Photo</a>
         ) : null
 
         return (

@@ -7,7 +7,6 @@ import { deletePhoto, updatePhoto, fetchPhoto } from '../../actions/photo_action
 import { resetPhotoErrors } from '../../actions/photo_actions'
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         currentUserId: state.session.id,
         formType: 'Edit',
@@ -18,7 +17,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    // debugger
     return {
         deletePhoto: photoId => dispatch(deletePhoto(photoId)),
         updatePhoto: photo => dispatch(updatePhoto(photo)),

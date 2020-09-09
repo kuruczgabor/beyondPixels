@@ -5,7 +5,6 @@ import { createFollowing, deleteFollowing, fetchFollowings} from '../../actions/
 import {openModal, closeModal} from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         currentUserId: state.session.id,
         userId: ownProps.userId,
@@ -16,7 +15,6 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => {
-    // debugger
     return {
         fetchFollowings: () => dispatch(fetchFollowings()),
         createFollowing: following => dispatch(createFollowing(following)),

@@ -9,29 +9,9 @@ class AuthHeader extends React.Component {
 
     componentDidMount() {
 
-        // debugger
-
         const trigger = document.getElementById('profile-dropdown-trigger');
         const dropdown = document.getElementById('profile-dropdown');
 
-        // // if (dropdown) {
-        // //     document.addEventListener("click", function () {
-        // //         debugger
-        // //         dropdown.classList.remove('reveal')
-        // //     }, false);
-        // // }
-
-        // if (trigger) {
-        //     trigger.addEventListener("click", function (e) {
-        //         dropdown.classList.add('reveal')
-
-        //         document.addEventListener("click", function () {
-        //             dropdown.classList.remove('reveal')
-        //         }, false);
-        //         e.stopPropagation();
-        //     }, false);
-        // }
-
         if (dropdown && dropdown.classList.value !== "eventlistener-added") {
             if (trigger) {
                 trigger.addEventListener('click', () => {
@@ -41,7 +21,6 @@ class AuthHeader extends React.Component {
             }
 
             window.addEventListener('click', (e) => {
-                // debugger
                 if (!e.target.matches('#profile-dropdown-trigger-icon')) {
                     let dropdown = document.getElementById('profile-dropdown');
                     if (dropdown && dropdown.classList.contains('reveal')) {
@@ -50,23 +29,11 @@ class AuthHeader extends React.Component {
                 }
             })
         }
-
-
-
     }
 
     componentDidUpdate(prevProps) {
-
-        // debugger
-
-        // // console.log('hello')
         const trigger = document.getElementById('profile-dropdown-trigger');
         const dropdown = document.getElementById('profile-dropdown')
-
-        // // if (dropdown) {
-        // //     dropdown.classList.remove('reveal')
-        // // }
-        // debugger
 
         if (dropdown && dropdown.classList.value !== "eventlistener-added") {
             if (trigger) {
@@ -77,7 +44,6 @@ class AuthHeader extends React.Component {
             }
 
             window.addEventListener('click', (e) => {
-                // debugger
                 if (!e.target.matches('#profile-dropdown-trigger-icon')) {
                     let dropdown = document.getElementById('profile-dropdown');
                     if (dropdown && dropdown.classList.contains('reveal')) {
@@ -88,11 +54,6 @@ class AuthHeader extends React.Component {
         }
 
     }
-
-    // logOut() {
-    //     debugger
-    //     this.props.logout()
-    // }
 
     render() {
 
@@ -133,9 +94,7 @@ class AuthHeader extends React.Component {
                 {sessionLinks}
             </div>
         )
-
     }
-
 };
 
 export default AuthHeader;

@@ -4,12 +4,9 @@ import { logout } from '../../actions/session_actions';
 import AuthHeader from './auth_header';
 
 const mapStateToProps = ( state, ownProps ) => {
-    // debugger
     return {
         currentUser: state.entities.users[state.session.id],
         currentUserId: state.session.id
-        // currentUser: users[session.id],
-        // currentUserId: session.id
     };
 };
 

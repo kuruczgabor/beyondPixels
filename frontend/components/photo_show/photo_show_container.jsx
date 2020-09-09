@@ -5,13 +5,10 @@ import PhotoShow from './photo_show';
 import { fetchUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         photo: state.entities.photos[ownProps.match.params.photoId],
         users: state.entities.users,
         currentUserId: state.session.id
-        // photoAuthor: state.entities.users[state.entities.photos[ownProps.match.params.photoId].author_id],
-        // currentUserId: state.session.id
     }
 };
 

@@ -10,18 +10,6 @@ class Api::PhotosController < ApplicationController
         render :index
     end
 
-    # def create
-    #     debugger
-    #     @photo = Photo.new(photo_params)
-    #     debugger
-    #     if @photo.save
-    #         render :show
-    #     else
-    #         debugger
-    #         render json: @photo.errors.full_messages, status: 422
-    #     end
-    # end
-
     def create
         if photo_params[:photo_file] != 'null'
             @photo = Photo.new(photo_params)
