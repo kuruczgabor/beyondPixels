@@ -4,6 +4,7 @@
     list-style-type: none;
     position: relative;
     // padding: 0px 100px;
+    // padding-bottom: 50px;
 }
 
 .home-env h2 {
@@ -36,7 +37,7 @@
     max-width: 100%;
     object-fit: contain;
     max-height: fit-content;
-    margin-bottom: 15px;
+    padding-bottom: 15px;
     // box-shadow: inset 2px 2px 2px 2px black;    
     // z-index: 5;
 }
@@ -57,7 +58,7 @@
 
 .post-index-title {
     position: absolute;
-    bottom: 10px;
+    bottom: 25px;
     left: 10px;
     color: white;
     font-family: 'Helvetica Neue', 'HelveticaNeue' , 'Helvetica';
